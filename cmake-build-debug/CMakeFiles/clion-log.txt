@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/Wet2_DS
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.HNLZ2ldeVz
 -- The C compiler identification is GNU 4.8.5
 -- The CXX compiler identification is GNU 4.8.5
 -- Check for working C compiler: /usr/bin/cc
@@ -11,5 +11,4 @@
 -- Detecting CXX compiler ABI info - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /tmp/Wet2_DS/cmake-build-debug
-Cannot read C:\Users\sahar\CLionProjects\Wet2_DS\cmake-build-debug\CMakeFiles\TargetDirectories.txt
+-- Build files have been written to: /tmp/tmp.HNLZ2ldeVz/cmake-build-debug

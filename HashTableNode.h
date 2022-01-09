@@ -9,15 +9,33 @@ template <typename T>
 class HashTableNode {
 private:
     int key;
-    T* data;
+    T *data;
 public:
-    HashTableNode(int key, T* data);
-    int GetKey();
-    T* GetData();
-    void SetData(T* data_ = nullptr);
-    void SetKey(int key_);
-    bool operator==(const HashTableNode<T>& x);
     ~HashTableNode() = default;
+
+    HashTableNode(int key, T *data) : key(key), data(data) {}
+
+
+    int GetKey() {
+        return this->key;
+    }
+
+
+    T GetData() {
+        return this->data;
+    }
+
+    bool operator==(const HashTableNode<T> &x) {
+        return (this->key == x.key);
+    }
+
+    void SetData(T *data_) {
+        this->data = data_;
+    }
+
+    void SetKey(int key_) {
+        this->key = key_;
+    }
 };
 
 

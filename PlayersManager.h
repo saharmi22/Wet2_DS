@@ -17,7 +17,7 @@ class PlayersManager {
     AVLtree<Player*, DoubleKey>* players_by_level;
     AVLtree<Player*, DoubleKey>** players_by_score;
     int number_of_not_included;
-    UnionFind<Group*> groups;
+    UnionFind<Group> groups;
 
 public:
 

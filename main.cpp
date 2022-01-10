@@ -4,7 +4,7 @@
 int main() {
     HashTable<int>* ht = new HashTable<int>();
     int data_1 = 1;
-    int data_2 = 2;
+    
     int data_3 = 3;
     int data_4 = 4;
     int data_5 = 5;

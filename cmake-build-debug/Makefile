@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/tmp.HNLZ2ldeVz
+CMAKE_SOURCE_DIR = /tmp/Wet2_DS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/tmp.HNLZ2ldeVz/cmake-build-debug
+CMAKE_BINARY_DIR = /tmp/Wet2_DS/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.HNLZ2ldeVz/cmake-build-debug/CMakeFiles /tmp/tmp.HNLZ2ldeVz/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Wet2_DS/cmake-build-debug/CMakeFiles /tmp/Wet2_DS/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.HNLZ2ldeVz/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/Wet2_DS/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -101,217 +101,14 @@ depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Wet2_DS
-
-# Build rule for target.
-Wet2_DS: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Wet2_DS
-.PHONY : Wet2_DS
-
-# fast build rule for target.
-Wet2_DS/fast:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/build
-.PHONY : Wet2_DS/fast
-
-Group.o: Group.cpp.o
-.PHONY : Group.o
-
-# target to build an object file
-Group.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.o
-.PHONY : Group.cpp.o
-
-Group.i: Group.cpp.i
-.PHONY : Group.i
-
-# target to preprocess a source file
-Group.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.i
-.PHONY : Group.cpp.i
-
-Group.s: Group.cpp.s
-.PHONY : Group.s
-
-# target to generate assembly for a file
-Group.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.s
-.PHONY : Group.cpp.s
-
-HashTable.o: HashTable.cpp.o
-.PHONY : HashTable.o
-
-# target to build an object file
-HashTable.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/HashTable.cpp.o
-.PHONY : HashTable.cpp.o
-
-HashTable.i: HashTable.cpp.i
-.PHONY : HashTable.i
-
-# target to preprocess a source file
-HashTable.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/HashTable.cpp.i
-.PHONY : HashTable.cpp.i
-
-HashTable.s: HashTable.cpp.s
-.PHONY : HashTable.s
-
-# target to generate assembly for a file
-HashTable.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/HashTable.cpp.s
-.PHONY : HashTable.cpp.s
-
-HashTableNode.o: HashTableNode.cpp.o
-.PHONY : HashTableNode.o
-
-# target to build an object file
-HashTableNode.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/HashTableNode.cpp.o
-.PHONY : HashTableNode.cpp.o
-
-HashTableNode.i: HashTableNode.cpp.i
-.PHONY : HashTableNode.i
-
-# target to preprocess a source file
-HashTableNode.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/HashTableNode.cpp.i
-.PHONY : HashTableNode.cpp.i
-
-HashTableNode.s: HashTableNode.cpp.s
-.PHONY : HashTableNode.s
-
-# target to generate assembly for a file
-HashTableNode.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/HashTableNode.cpp.s
-.PHONY : HashTableNode.cpp.s
-
-Player.o: Player.cpp.o
-.PHONY : Player.o
-
-# target to build an object file
-Player.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.o
-.PHONY : Player.cpp.o
-
-Player.i: Player.cpp.i
-.PHONY : Player.i
-
-# target to preprocess a source file
-Player.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.i
-.PHONY : Player.cpp.i
-
-Player.s: Player.cpp.s
-.PHONY : Player.s
-
-# target to generate assembly for a file
-Player.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.s
-.PHONY : Player.cpp.s
-
-UnionFind.o: UnionFind.cpp.o
-.PHONY : UnionFind.o
-
-# target to build an object file
-UnionFind.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/UnionFind.cpp.o
-.PHONY : UnionFind.cpp.o
-
-UnionFind.i: UnionFind.cpp.i
-.PHONY : UnionFind.i
-
-# target to preprocess a source file
-UnionFind.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/UnionFind.cpp.i
-.PHONY : UnionFind.cpp.i
-
-UnionFind.s: UnionFind.cpp.s
-.PHONY : UnionFind.s
-
-# target to generate assembly for a file
-UnionFind.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/UnionFind.cpp.s
-.PHONY : UnionFind.cpp.s
-
-UnionNode.o: UnionNode.cpp.o
-.PHONY : UnionNode.o
-
-# target to build an object file
-UnionNode.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/UnionNode.cpp.o
-.PHONY : UnionNode.cpp.o
-
-UnionNode.i: UnionNode.cpp.i
-.PHONY : UnionNode.i
-
-# target to preprocess a source file
-UnionNode.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/UnionNode.cpp.i
-.PHONY : UnionNode.cpp.i
-
-UnionNode.s: UnionNode.cpp.s
-.PHONY : UnionNode.s
-
-# target to generate assembly for a file
-UnionNode.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/UnionNode.cpp.s
-.PHONY : UnionNode.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Wet2_DS"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Group.o"
-	@echo "... Group.i"
-	@echo "... Group.s"
-	@echo "... HashTable.o"
-	@echo "... HashTable.i"
-	@echo "... HashTable.s"
-	@echo "... HashTableNode.o"
-	@echo "... HashTableNode.i"
-	@echo "... HashTableNode.s"
-	@echo "... Player.o"
-	@echo "... Player.i"
-	@echo "... Player.s"
-	@echo "... UnionFind.o"
-	@echo "... UnionFind.i"
-	@echo "... UnionFind.s"
-	@echo "... UnionNode.o"
-	@echo "... UnionNode.i"
-	@echo "... UnionNode.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

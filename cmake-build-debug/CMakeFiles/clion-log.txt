@@ -1,4 +1,6 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.HNLZ2ldeVz
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/Wet2_DS
 -- Configuring done
--- Generating done
--- Build files have been written to: /tmp/tmp.HNLZ2ldeVz/cmake-build-debug
+CMake Error: Cannot open file for write: /tmp/Wet2_DS/cmake-build-debug/CMakeCache.txt.tmp
+CMake Error: : System Error: Permission denied
+CMake Error: Unable to open cache file for save. /tmp/Wet2_DS/cmake-build-debug/CMakeCache.txt
+CMake Error: : System Error: Permission denied

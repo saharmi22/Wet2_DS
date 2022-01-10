@@ -5,9 +5,6 @@
 #include "Group.h"
 
 void Group::addPlayer(Player *player_to_add) {
-    DoubleKey* new_key = new DoubleKey(player_to_add->getLevel(), player_to_add->getId());
-    players_by_level_tree->add_object(player_to_add, new_key);
-
 
 }
 

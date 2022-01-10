@@ -30,7 +30,7 @@ public:
     void GetPercentOfPlayersWithScoreInBounds(int GroupID, int score, int lowerLevel, int higherLevel,double * players);
     void AverageHighestPlayerLevelByGroup(int GroupID, int m, double * level);
     void GetPlayersBound(int GroupID, int score, int m, int * LowerBoundPlayers, int * HigherBoundPlayers);
-    ~PlayersManager();
+    ~PlayersManager(); //RL
 
 };
 

@@ -21,7 +21,7 @@ public:
     }
 
 
-    T GetData() {
+    T* GetData() {
         return this->data;
     }
 
@@ -29,7 +29,7 @@ public:
         return (this->key == x.key);
     }
 
-    void SetData(T *data_) {
+    void SetData(T *data_ = nullptr) {
         this->data = data_;
     }
 
@@ -37,6 +37,5 @@ public:
         this->key = key_;
     }
 };
-
 
 #endif //HASHTABLE_HASHTABLENODE_H

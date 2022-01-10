@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/tmp/tmp.HNLZ2ldeVz/HashTable.cpp
+HashTable.h
+/tmp/tmp.HNLZ2ldeVz/HashTable.h
+
+/tmp/tmp.HNLZ2ldeVz/HashTable.h
+HashTableNode.h
+/tmp/tmp.HNLZ2ldeVz/HashTableNode.h
+
+/tmp/tmp.HNLZ2ldeVz/HashTableNode.cpp
+HashTableNode.h
+/tmp/tmp.HNLZ2ldeVz/HashTableNode.h
+
+/tmp/tmp.HNLZ2ldeVz/HashTableNode.h
+
+/tmp/tmp.HNLZ2ldeVz/main.cpp
+iostream
+-
+HashTable.h
+/tmp/tmp.HNLZ2ldeVz/HashTable.h
+

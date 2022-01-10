@@ -26,15 +26,19 @@ private:
 	void increase_extra(int to_increase){
 		this->tree_extra_content += to_increase;
 	}
+
 	int get_extra(){
 		return tree_extra_content;
 	}
+
 	void set_extra(int ex){
 		this->tree_extra_content = ex;
 	}
+
 	Key* get_key(){
 		return tree_key;
 	}
+
 	void set_key(Key* new_key){
 		this->tree_key = new_key;
 	}

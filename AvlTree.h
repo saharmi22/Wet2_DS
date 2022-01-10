@@ -50,16 +50,16 @@ private:
 		this->tree_bf = left_height - right_height;
 		this->tree_size = 1 + ((this->get_right()) ? (this->get_right())->getsize() : 0) + ((this->get_left()) ? (this->get_left())->getsize() : 0);
 		if(this->get_right() && this->get_left()) {
-			this->set_extra(*(this->get_key()) + (this->get_right()->get_extra()) + (this->get_left()->get_extra()));
+			this->set_extra(this->get_key()->getFirst() + (this->get_right()->get_extra()) + (this->get_left()->get_extra()));
 		}
 		else if(this->get_right()) {
-			this->set_extra(*(this->get_key()) + (this->get_right()->get_extra()));
+			this->set_extra(this->get_key()->getFirst() + (this->get_right()->get_extra()));
 		}
 		else if(this->get_left()) {
-			this->set_extra(*(this->get_key()) + (this->get_left()->get_extra()));
+			this->set_extra(this->get_key()->getFirst() + (this->get_left()->get_extra()));
 		}
 		else{
-			this->set_extra(*(this->get_key()));
+			this->set_extra(this->get_key()->getFirst());
 		}
 		
 	}         //for the given tree it updates its height and bf //freed
@@ -127,7 +127,7 @@ public:
 	AVLtree(): tree_value(nullptr),tree_key(nullptr), tree_bf(0) , tree_height(1), tree_size(1), tree_extra_content(0),tree_left(
 			nullptr), tree_right(nullptr), dad(nullptr) {}
 
-	AVLtree(Value* new_value, Key* new_key): tree_value(new_value),tree_key(new_key), tree_bf(0) , tree_height(1), tree_size(1), tree_extra_content(*new_key),tree_left(
+	AVLtree(Value* new_value, Key* new_key): tree_value(new_value),tree_key(new_key), tree_bf(0) , tree_height(1), tree_size(1), tree_extra_content(new_key->getFirst()),tree_left(
 			nullptr), tree_right(nullptr), dad(nullptr) {}
 
 	void operator+(AVLtree<Value, Key>& tree)
@@ -329,7 +329,7 @@ public:
 		else{
 			this->set_info(new_value);
 			this->set_key(new_key);
-			this->tree_extra_content = *new_key;
+			this->tree_extra_content = new_key->getFirst;
 			return TREE_SUCCESS;
 		}
 	} //freed

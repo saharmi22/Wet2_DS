@@ -6,8 +6,6 @@
 #define WET2_DS_PLAYER_H
 
 class Player {
-private:
-
     int id;
     int level;
     int score;

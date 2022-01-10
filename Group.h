@@ -9,7 +9,6 @@
 #include "DoubleKey.h"
 
 class Group {
-private:
     int group_id;
     int number_of_not_included;
     AVLtree<Player,DoubleKey>** players_by_score_array;

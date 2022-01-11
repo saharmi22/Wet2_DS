@@ -151,6 +151,33 @@ public:
 		delete[] new_keys;
 	}  //freed  //done
 
+    int getMSum(int m)
+    {
+        if (this->get_right()) {
+            if (this->get_right()->tree_size + 1 > m)
+                return this->get_right()->getMSum(m);
+            else if (this->get_right()->tree_size + 1 == m) {
+                if (this->get_left()) {
+                    return this->get_extra() - this->get_left()->get_extra();
+                }
+                else
+                    return this->get_extra();
+            }
+            else
+                return this->get_right()->get_extra() +
+                        (this->get_extra() - this->get_left()->get_extra())
+                    + this->get_left()->getMSum(m - this->get_right()->getsize());
+        }
+        else {
+            if (this->getsize() == m)
+                return this->get_extra();
+            else { //more than m
+                return (this->get_extra() - this->get_left()->get_extra())
+                    + this->get_left()->getMSum(m-1);
+            }
+        }
+    }
+
 	void empty_tree()
 	{
 		this->set_info(nullptr);

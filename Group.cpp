@@ -33,3 +33,19 @@ void Group::decreaseCounter()
 {
     this->number_of_not_included--;
 }
+
+AVLtree<Player, DoubleKey> *Group::getPlayers() {
+    return this->players_by_level_tree;
+}
+
+Group::Group(int id) {
+
+}
+
+Group::~Group() {
+
+}
+
+AVLtree<Player, DoubleKey> **Group::getPlayersByScoreArray() {
+    return this->players_by_score_array
+}

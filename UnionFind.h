@@ -24,6 +24,7 @@ public:
 		}
 		delete[] union_arr;
 	}
+
 	UnionNode<T>* get_group(UnionNode<T>* input){
 		UnionNode<T>* current = input;
 		UnionNode<T>* parent = current->get_parent();
@@ -33,6 +34,7 @@ public:
 		}
 		return current;
 	}
+
 	UnionNode<T>* get_union(int cell){
 		UnionNode<T>* cell_union = get_group(union_arr[cell]);
 		UnionNode<T>* temp = union_arr[cell];

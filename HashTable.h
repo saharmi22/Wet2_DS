@@ -9,22 +9,9 @@
 
 template <typename T>
 class HashTable {
-private:
     int table_size;
     int num_of_items;
     HashTableNode<T>** table;
-
-public:
-
-    HashTable() : num_of_items(0), table_size(7), table(new HashTableNode<T>*[this->table_size]){}
-
-    int h(int key) {
-        return (key % this->table_size);
-    }
-
-    int r(int key) {
-        return (1+(key%3));
-    }
 
     void rehash() {
         int original_size = this->table_size;
@@ -57,6 +44,18 @@ public:
         }
         delete this->table;
         this->table = new_table;
+    }
+
+public:
+
+    HashTable() : num_of_items(0), table_size(7), table(new HashTableNode<T>*[this->table_size]){}
+
+    int h(int key) {
+        return (key % this->table_size);
+    }
+
+    int r(int key) {
+        return (1+(key%3));
     }
 
     void Insert(int key, T *data) {
@@ -107,6 +106,22 @@ public:
             count++;
         }
         return (count <= this->table_size && this->table[index]);
+    }
+
+    T* GetMember(int key)
+    {
+        int r0 = r(key);
+        int h0 = h(key);
+        int index = h0;
+        int count = 1;
+        while (this->table[index] && this->table[index]->GetKey()!=key && count <= this->table_size)
+        {
+            index = h(h0 + count*r0);
+            count++;
+        }
+        if (count <= this->table_size && this->table[index])
+            return this->table[index]->GetData();
+        return nullptr;
     }
 
     ~HashTable()

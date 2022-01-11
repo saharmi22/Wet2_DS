@@ -15,13 +15,17 @@ class Group {
     AVLtree<Player, DoubleKey>* players_by_level_tree;
 
 public:
+    Group(int id);
     void addPlayer(Player* player_to_add);
     void removePlayer(int id_to_remove);
     Player* changePlayersScore(DoubleKey key, int amount_to_increase);
     Player* changePlayersLevel(DoubleKey key, int amount_to_increase);
+    AVLtree<Player, DoubleKey>* getPlayers();
+    AVLtree<Player, DoubleKey>** getPlayersByScoreArray();
     double getPercent(int score, int lower_level, int higher_level);
     void increaseCounter();
     void decreaseCounter();
+    ~Group();
 };
 
 

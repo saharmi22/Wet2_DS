@@ -35,7 +35,7 @@ public:
 		return current;
 	}
 
-	UnionNode<T>* get_union(int cell){
+	T* get_union(int cell){
 		UnionNode<T>* cell_union = get_group(union_arr[cell]);
 		UnionNode<T>* temp = union_arr[cell];
 		UnionNode<T>* temp_parent = temp->get_parent();
@@ -48,7 +48,7 @@ public:
 				temp_parent = temp->get_parent();
 			}
 		}
-		return cell_union;
+		return cell_union->get_value();
 	}
 
 	void to_union(int a, int b)

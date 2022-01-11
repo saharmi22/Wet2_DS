@@ -11,6 +11,7 @@
 #include "DoubleKey.h"
 #include "UnionFind.h"
 #include "library2.h"
+#include "Group.h"
 
 class PlayersManager {
 

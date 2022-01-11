@@ -27,17 +27,12 @@ private:
 		this->tree_extra_content += to_increase;
 	}
 
-	int get_extra(){
-		return tree_extra_content;
-	}
+
 
 	void set_extra(int ex){
 		this->tree_extra_content = ex;
 	}
 
-	Key* get_key(){
-		return tree_key;
-	}
 
 	void set_key(Key* new_key){
 		this->tree_key = new_key;
@@ -112,7 +107,7 @@ private:
 		else
 			tree_right= new_tree;
 	}   //done and shared //freed
-	AVLtree<Value, Key>* getdad(){          // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	AVLtree<Value, Key>* getdad(){     
 		return dad;
 	}
 	void setdad(AVLtree<Value, Key>* father){
@@ -123,6 +118,16 @@ private:
 	}
 
 public:
+
+	Key* get_key(){
+		return tree_key;
+	}
+
+	int get_extra(){
+		return tree_extra_content;
+	}
+
+
 
 	AVLtree(): tree_value(nullptr),tree_key(nullptr), tree_bf(0) , tree_height(1), tree_size(1), tree_extra_content(0),tree_left(
 			nullptr), tree_right(nullptr), dad(nullptr) {}
@@ -356,7 +361,7 @@ public:
 		else{
 			this->set_info(new_value);
 			this->set_key(new_key);
-			this->tree_extra_content = new_key->getFirst;
+			this->tree_extra_content = new_key->getFirst();
 			return TREE_SUCCESS;
 		}
 	} //freed
@@ -445,6 +450,14 @@ public:
 			(to_replace->get_right())->replace_next_object(to_replace);
 		}
 	}    //done and freed
+
+	int find_level(int low, int sum = 0){
+		 if(!this)
+		 	return sum;
+		 if(this->get_key()->getFirst()>=low)
+		 	return this->get_left()->find_level(low, 1 + sum + (this->get_right()->getsize()));
+		 return this->get_right()->find_level(low, sum);
+	}
 
 	tree_result replace_next_object(AVLtree<Value,Key>* to_delete){
 		if(!this->get_left())

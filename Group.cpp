@@ -47,5 +47,5 @@ Group::~Group() {
 }
 
 AVLtree<Player, DoubleKey> **Group::getPlayersByScoreArray() {
-    return this->players_by_score_array
+    return this->players_by_score_array;
 }

@@ -4,25 +4,14 @@
 
 #include "Group.h"
 
-void Group::addPlayer(Player *player_to_add) {
+void Group::addPlayer(Player *player_to_add) {      //todo
 
 }
 
-void Group::removePlayer(int id_to_remove) {
+void Group::removePlayer(int id_to_remove) {  //todo
 
 }
 
-Player *Group::changePlayersScore(DoubleKey key, int amount_to_increase) {
-    return nullptr;
-}
-
-Player *Group::changePlayersLevel(DoubleKey key, int amount_to_increase) {
-    return nullptr;
-}
-
-double Group::getPercent(int score, int lower_level, int higher_level) {
-    return 0;
-}
 
 void Group::increaseCounter()
 {

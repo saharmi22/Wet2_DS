@@ -11,14 +11,14 @@ void DoubleKey::setFirst(int set_to) {
 }
 
 bool DoubleKey::operator<(const DoubleKey &key2) const {
-    if (this.first_key < key2.first_key)
-        return (this.first_key < key2.first_key);
+    if (this->first_key < key2.first_key)
+        return (this->first_key < key2.first_key);
     else
         return (this->second_key < key2.second_key);
 }
 
 bool DoubleKey::operator==(const DoubleKey &key2) const {
-    return (this.first_key == key2.first_key && this->second_key < key2.second_key);
+    return (this->first_key == key2.first_key && this->second_key < key2.second_key);
 }
 
 int DoubleKey::getFirst() {

@@ -33,7 +33,6 @@ class HashTable {
                 index = h0;
                 count = 1;
                 while (new_table[index]) {
-                    HashTableNode<T>* hy = new_table[index];
                     index = h(h0+count*r0);
                     count++;
                 }
@@ -48,7 +47,7 @@ class HashTable {
 
 public:
 
-    HashTable() : num_of_items(0), table_size(7), table(new HashTableNode<T>*[this->table_size]){}
+    HashTable() : table_size(7), num_of_items(0) , table(new HashTableNode<T>*[this->table_size]){}
 
     int h(int key) {
         return (key % this->table_size);

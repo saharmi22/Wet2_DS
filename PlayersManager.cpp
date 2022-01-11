@@ -22,15 +22,15 @@ StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
 {
     if (GroupID1<=0 || GroupID1> this->num_of_groups || GroupID2<=0 || GroupID2> this->num_of_groups)
         return INVALID_INPUT;
+	Group* group1;
+	Group* group2;
+	group1 = this->groups->get_union(GroupID1);
+	group2 = this->groups->get_union(GroupID2);
     this->groups->to_union(GroupID1, GroupID2);
-    Group* group1;
-    Group* group2;
-    group1 = this->groups->get_union(GroupID1);
-    group2 = this->groups->get_union(GroupID2);
-    group1->getPlayers() + group2->getPlayers();
+    *group1->getPlayers() + *group2->getPlayers();
     for (int i=0; i< this->scale; i++)
     {
-        group1->getPlayersByScore()[i]+group2->getPlayersByScore()[i];
+        *group1->getPlayersByScoreArray()[i] + *group2->getPlayersByScoreArray()[i];    //delete
     }
     return SUCCESS;
 }
@@ -38,7 +38,7 @@ StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
 StatusType PlayersManager::AddPlayer(int PlayerID, int GroupID, int score){      //done
 	if(PlayerID<=0 ||GroupID<=0||score<=0||score>scale||GroupID>num_of_groups)
 		return INVALID_INPUT;
-	if(!(players_by_id->GetMember(PlayerID)))
+	if((players_by_id->GetMember(PlayerID)))
 		return FAILURE;
 	Player* new_player = new Player(PlayerID, score, GroupID);
 	players_by_id->Insert(PlayerID, new_player);
@@ -59,15 +59,15 @@ StatusType PlayersManager::RemovePlayer(int PlayerID)
     Player* player = this->players_by_id->GetMember(PlayerID);
     if (player) {
         Group* group = this->groups->get_union(player->getGroupId());
-        DoubleKey players_double_by_score(player->getScore(), player->getId());
         DoubleKey players_double_by_level(player->getLevel(), player->getId());
         group->removePlayer(PlayerID);
-        if (this->players_by_level->find_object(players_double_by_level)) {
-            this->players_by_score[player->getScore() - 1]->delete_object(&players_double_by_score);
+        if (this->players_by_level->find_object(&players_double_by_level)) {
+            this->players_by_score[player->getScore() - 1]->delete_object(&players_double_by_level);
             this->players_by_level->delete_object(&players_double_by_level);
         }
         else
             this->number_of_not_included--;
+        this->players_by_id->Delete(PlayerID);
         return SUCCESS;
     }
     return FAILURE;
@@ -124,17 +124,15 @@ StatusType PlayersManager::ChangePlayerIDScore(int PlayerID, int NewScore)
     {
         int old_score  = player->getScore();
         player->setScore(NewScore);
-        DoubleKey players_double_by_old_score(old_score, player->getId());
-        DoubleKey* players_double_by_new_score = new DoubleKey(player->getScore(), player->getId());
         DoubleKey* players_double_by_level = new DoubleKey(player->getLevel(), player->getId());
-        if (!this->players_by_score[old_score]->find_object(PlayerID)) {
-            this->players_by_score[old_score]->add_object(player, players_double_by_new_score);
+        if (!this->players_by_score[old_score]->find_object(players_double_by_level)) {
+            this->players_by_score[old_score]->add_object(player, players_double_by_level);
             this->players_by_level->add_object(player, players_double_by_level);
             this->number_of_not_included--;
         }
         else {
-            this->players_by_score[old_score]->delete_object(&players_double_by_score);
-            this->players_by_score[NewScore]->add_object(player, players_double_by_new_score);
+            this->players_by_score[old_score]->delete_object(players_double_by_level);
+            this->players_by_score[NewScore]->add_object(player, players_double_by_level);
         }
         return SUCCESS;
     }
@@ -165,36 +163,33 @@ StatusType PlayersManager::GetPercentOfPlayersWithScoreInBounds(int GroupID, int
 
 
 	}
-
+	 return SUCCESS;
 
 }
 
 //valid parameters
 //if groupid > 0 find group
 //find sum of highest m and divide by m
-StatusType PlayersManager::AverageHighestPlayerLevelByGroup(int GroupID, int m, double * level)
-{
-    if (GroupID < 0 || GroupID > this->num_of_groups || m <= 0)
-        return INVALID_INPUT;
-    if (GroupID > 0) {
-        Group *group = this->groups->get_union(GroupID);
-        AVLtree<Player, DoubleKey>* players = group->getPlayers();
-        if (players->get_size() >= m)
-        {
-            return players->getMSum(m) / m;
-        }
-        return FAILURE;
-    }
-    else
-    {
-        if (this->players_by_level->getsize() >= m)
-        {
-            return players->getMSum(m) / m;
-        }
-        return FAILURE;
-    }
-    return SUCCESS;
+StatusType PlayersManager::AverageHighestPlayerLevelByGroup(int GroupID, int m, double * level) {
+	if (GroupID < 0 || GroupID > this->num_of_groups || m <= 0 || !level)
+		return INVALID_INPUT;
+	if (GroupID > 0) {
+		Group *group = this->groups->get_union(GroupID);
+		AVLtree<Player, DoubleKey> *players = group->getPlayers();
+		if (players->getsize() >= m) {
+			*level = players->getMSum(m) / m;
+			return SUCCESS;
+		}
+	}
+	else {
+		if (this->players_by_level->getsize() >= m) {
+			*level = this->players_by_level->getMSum(m) / m;
+			return SUCCESS;
+		}
+	}
+	return FAILURE;
 }
+
 
 //BONUS
 StatusType PlayersManager::GetPlayersBound(int GroupID, int score, int m, int * LowerBoundPlayers, int * HigherBoundPlayers)
@@ -202,7 +197,7 @@ StatusType PlayersManager::GetPlayersBound(int GroupID, int score, int m, int * 
 	      return SUCCESS;
 }
 
-~PlayersManager(){
+PlayersManager::~PlayersManager()= default;
 	
 
-}
+

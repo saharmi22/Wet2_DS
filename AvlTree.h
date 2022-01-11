@@ -7,12 +7,12 @@
 //
 // Created by harel on 11/27/2021.
 //
+#include "DoubleKey.h"
 
 enum tree_result{ALREADY_EXIST,TREE_SUCCESS,MEMORY_PROBLEM};
 
 template <class Value, class Key>
 class AVLtree{
-private:
 	Value* tree_value;
 	Key* tree_key;
 	int tree_bf;
@@ -148,7 +148,7 @@ public:
 		int* j = new int(0);
 		tree.inorder_insert(sec_values_holder, sec_keys_holder, j);
 		delete j;
-		Value** new_keys = new Value*[all_size];
+		Key** new_keys = new Key*[all_size];
 		Value** final_values_arr = (this->array_merge(t_values_holder, sec_values_holder,t_keys_holder,sec_keys_holder, all_size, this->getsize(), tree.getsize(), new_keys));
 		this->empty_tree();
 		this->arr_to_tree(final_values_arr, new_keys, 0 ,all_size-1);
@@ -210,14 +210,14 @@ public:
 		{
 			this->set_info(arr_values[start]);
 			this->set_key(arr_keys[start]);
-			this->increase_extra(*arr_keys[start]);
+			this->increase_extra((arr_keys[start])->getFirst());
 		}
 		if(start < end)
 		{
 			int head = (start + end) / 2;
 			this->set_info(arr_values[head]);
 			this->set_key(arr_keys[head]);
-			this->increase_extra(*arr_keys[head]);
+			this->increase_extra(arr_keys[head]->getFirst());
 			if(end-head>=1)
 			{
 				AVLtree<Value,Key>* right(new AVLtree<Value,Key>());

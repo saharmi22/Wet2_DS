@@ -8,18 +8,18 @@
       <Option virtualFolders="CMake Files\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/tmp/tmp.DPh60GQ3wY/cmake-build-debug" />
+         <Option working_dir="/tmp/tmp.FDunDIGpiU/cmake-build-debug" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="Wet2_DS">
-         <Option output="/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/tmp/tmp.DPh60GQ3wY/cmake-build-debug" />
+         <Option output="/tmp/tmp.FDunDIGpiU/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/tmp/tmp.FDunDIGpiU/cmake-build-debug" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -32,15 +32,15 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="Wet2_DS/fast">
-         <Option output="/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/tmp/tmp.DPh60GQ3wY/cmake-build-debug" />
+         <Option output="/tmp/tmp.FDunDIGpiU/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/tmp/tmp.FDunDIGpiU/cmake-build-debug" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -53,44 +53,52 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS/fast" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS/fast" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rebuild_cache">
-         <Option working_dir="/tmp/tmp.DPh60GQ3wY/cmake-build-debug" />
+         <Option working_dir="/tmp/tmp.FDunDIGpiU/cmake-build-debug" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.DPh60GQ3wY/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.FDunDIGpiU/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/main.cpp">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/DoubleKey.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/DoubleKey.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/Group.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/Group.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/Player.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/HashTable.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/PlayersManager.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/HashTableNode.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/main.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/Player.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/DoubleKey.h">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/PlayersManager.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/Group.h">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/UnionFind.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/HashTable.h">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/UnionNode.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/HashTableNode.h">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/library2.h">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/Player.h">
       </Unit>
-      <Unit filename="/tmp/tmp.DPh60GQ3wY/CMakeLists.txt">
+      <Unit filename="/tmp/tmp.FDunDIGpiU/PlayersManager.h">
+      </Unit>
+      <Unit filename="/tmp/tmp.FDunDIGpiU/UnionFind.h">
+      </Unit>
+      <Unit filename="/tmp/tmp.FDunDIGpiU/UnionNode.h">
+      </Unit>
+      <Unit filename="/tmp/tmp.FDunDIGpiU/library2.h">
+      </Unit>
+      <Unit filename="/tmp/tmp.FDunDIGpiU/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>
    </Project>

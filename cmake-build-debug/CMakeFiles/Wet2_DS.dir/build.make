@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/tmp.DPh60GQ3wY
+CMAKE_SOURCE_DIR = /tmp/tmp.FDunDIGpiU
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/tmp.DPh60GQ3wY/cmake-build-debug
+CMAKE_BINARY_DIR = /tmp/tmp.FDunDIGpiU/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Wet2_DS.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/Wet2_DS.dir/flags.make
 
 CMakeFiles/Wet2_DS.dir/main.cpp.o: CMakeFiles/Wet2_DS.dir/flags.make
 CMakeFiles/Wet2_DS.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /tmp/tmp.DPh60GQ3wY/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Wet2_DS.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Wet2_DS.dir/main.cpp.o -c /tmp/tmp.DPh60GQ3wY/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Wet2_DS.dir/main.cpp.o -c /tmp/tmp.FDunDIGpiU/main.cpp
 
 CMakeFiles/Wet2_DS.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2_DS.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /tmp/tmp.DPh60GQ3wY/main.cpp > CMakeFiles/Wet2_DS.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /tmp/tmp.FDunDIGpiU/main.cpp > CMakeFiles/Wet2_DS.dir/main.cpp.i
 
 CMakeFiles/Wet2_DS.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2_DS.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /tmp/tmp.DPh60GQ3wY/main.cpp -o CMakeFiles/Wet2_DS.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /tmp/tmp.FDunDIGpiU/main.cpp -o CMakeFiles/Wet2_DS.dir/main.cpp.s
 
 CMakeFiles/Wet2_DS.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/Wet2_DS.dir/main.cpp.o.requires
@@ -75,14 +75,114 @@ CMakeFiles/Wet2_DS.dir/main.cpp.o.provides: CMakeFiles/Wet2_DS.dir/main.cpp.o.re
 
 CMakeFiles/Wet2_DS.dir/main.cpp.o.provides.build: CMakeFiles/Wet2_DS.dir/main.cpp.o
 
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o: CMakeFiles/Wet2_DS.dir/flags.make
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o: ../PlayersManager.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o -c /tmp/tmp.FDunDIGpiU/PlayersManager.cpp
+
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /tmp/tmp.FDunDIGpiU/PlayersManager.cpp > CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.i
+
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /tmp/tmp.FDunDIGpiU/PlayersManager.cpp -o CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.s
+
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.requires:
+.PHONY : CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.requires
+
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.provides: CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.provides.build
+.PHONY : CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.provides
+
+CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.provides.build: CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o
+
+CMakeFiles/Wet2_DS.dir/Group.cpp.o: CMakeFiles/Wet2_DS.dir/flags.make
+CMakeFiles/Wet2_DS.dir/Group.cpp.o: ../Group.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Wet2_DS.dir/Group.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Wet2_DS.dir/Group.cpp.o -c /tmp/tmp.FDunDIGpiU/Group.cpp
+
+CMakeFiles/Wet2_DS.dir/Group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2_DS.dir/Group.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /tmp/tmp.FDunDIGpiU/Group.cpp > CMakeFiles/Wet2_DS.dir/Group.cpp.i
+
+CMakeFiles/Wet2_DS.dir/Group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2_DS.dir/Group.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /tmp/tmp.FDunDIGpiU/Group.cpp -o CMakeFiles/Wet2_DS.dir/Group.cpp.s
+
+CMakeFiles/Wet2_DS.dir/Group.cpp.o.requires:
+.PHONY : CMakeFiles/Wet2_DS.dir/Group.cpp.o.requires
+
+CMakeFiles/Wet2_DS.dir/Group.cpp.o.provides: CMakeFiles/Wet2_DS.dir/Group.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.o.provides.build
+.PHONY : CMakeFiles/Wet2_DS.dir/Group.cpp.o.provides
+
+CMakeFiles/Wet2_DS.dir/Group.cpp.o.provides.build: CMakeFiles/Wet2_DS.dir/Group.cpp.o
+
+CMakeFiles/Wet2_DS.dir/Player.cpp.o: CMakeFiles/Wet2_DS.dir/flags.make
+CMakeFiles/Wet2_DS.dir/Player.cpp.o: ../Player.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Wet2_DS.dir/Player.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Wet2_DS.dir/Player.cpp.o -c /tmp/tmp.FDunDIGpiU/Player.cpp
+
+CMakeFiles/Wet2_DS.dir/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2_DS.dir/Player.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /tmp/tmp.FDunDIGpiU/Player.cpp > CMakeFiles/Wet2_DS.dir/Player.cpp.i
+
+CMakeFiles/Wet2_DS.dir/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2_DS.dir/Player.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /tmp/tmp.FDunDIGpiU/Player.cpp -o CMakeFiles/Wet2_DS.dir/Player.cpp.s
+
+CMakeFiles/Wet2_DS.dir/Player.cpp.o.requires:
+.PHONY : CMakeFiles/Wet2_DS.dir/Player.cpp.o.requires
+
+CMakeFiles/Wet2_DS.dir/Player.cpp.o.provides: CMakeFiles/Wet2_DS.dir/Player.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.o.provides.build
+.PHONY : CMakeFiles/Wet2_DS.dir/Player.cpp.o.provides
+
+CMakeFiles/Wet2_DS.dir/Player.cpp.o.provides.build: CMakeFiles/Wet2_DS.dir/Player.cpp.o
+
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o: CMakeFiles/Wet2_DS.dir/flags.make
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o: ../DoubleKey.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o -c /tmp/tmp.FDunDIGpiU/DoubleKey.cpp
+
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /tmp/tmp.FDunDIGpiU/DoubleKey.cpp > CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.i
+
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /tmp/tmp.FDunDIGpiU/DoubleKey.cpp -o CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.s
+
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.requires:
+.PHONY : CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.requires
+
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.provides: CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.provides.build
+.PHONY : CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.provides
+
+CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.provides.build: CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o
+
 # Object files for target Wet2_DS
 Wet2_DS_OBJECTS = \
-"CMakeFiles/Wet2_DS.dir/main.cpp.o"
+"CMakeFiles/Wet2_DS.dir/main.cpp.o" \
+"CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o" \
+"CMakeFiles/Wet2_DS.dir/Group.cpp.o" \
+"CMakeFiles/Wet2_DS.dir/Player.cpp.o" \
+"CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o"
 
 # External object files for target Wet2_DS
 Wet2_DS_EXTERNAL_OBJECTS =
 
 Wet2_DS: CMakeFiles/Wet2_DS.dir/main.cpp.o
+Wet2_DS: CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o
+Wet2_DS: CMakeFiles/Wet2_DS.dir/Group.cpp.o
+Wet2_DS: CMakeFiles/Wet2_DS.dir/Player.cpp.o
+Wet2_DS: CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o
 Wet2_DS: CMakeFiles/Wet2_DS.dir/build.make
 Wet2_DS: CMakeFiles/Wet2_DS.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable Wet2_DS"
@@ -93,6 +193,10 @@ CMakeFiles/Wet2_DS.dir/build: Wet2_DS
 .PHONY : CMakeFiles/Wet2_DS.dir/build
 
 CMakeFiles/Wet2_DS.dir/requires: CMakeFiles/Wet2_DS.dir/main.cpp.o.requires
+CMakeFiles/Wet2_DS.dir/requires: CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o.requires
+CMakeFiles/Wet2_DS.dir/requires: CMakeFiles/Wet2_DS.dir/Group.cpp.o.requires
+CMakeFiles/Wet2_DS.dir/requires: CMakeFiles/Wet2_DS.dir/Player.cpp.o.requires
+CMakeFiles/Wet2_DS.dir/requires: CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o.requires
 .PHONY : CMakeFiles/Wet2_DS.dir/requires
 
 CMakeFiles/Wet2_DS.dir/clean:
@@ -100,6 +204,6 @@ CMakeFiles/Wet2_DS.dir/clean:
 .PHONY : CMakeFiles/Wet2_DS.dir/clean
 
 CMakeFiles/Wet2_DS.dir/depend:
-	cd /tmp/tmp.DPh60GQ3wY/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/tmp.DPh60GQ3wY /tmp/tmp.DPh60GQ3wY /tmp/tmp.DPh60GQ3wY/cmake-build-debug /tmp/tmp.DPh60GQ3wY/cmake-build-debug /tmp/tmp.DPh60GQ3wY/cmake-build-debug/CMakeFiles/Wet2_DS.dir/DependInfo.cmake --color=$(COLOR)
+	cd /tmp/tmp.FDunDIGpiU/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /tmp/tmp.FDunDIGpiU /tmp/tmp.FDunDIGpiU /tmp/tmp.FDunDIGpiU/cmake-build-debug /tmp/tmp.FDunDIGpiU/cmake-build-debug /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles/Wet2_DS.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Wet2_DS.dir/depend
 

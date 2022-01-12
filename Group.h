@@ -13,10 +13,10 @@ class Group {
     int number_of_not_included;
     AVLtree<Player,DoubleKey>** players_by_score_array;
     AVLtree<Player, DoubleKey>* players_by_level_tree;
-	int not_included_score_arr[200];
+	int not_included_score_arr[201];
 
 public:
-    Group(int id);
+    explicit Group(int id);
     void addPlayer(Player* player_to_add);
     void removePlayer(int id_to_remove, int level, int score) ;
     AVLtree<Player, DoubleKey>* getPlayers();
@@ -25,6 +25,8 @@ public:
     void decreaseCounter(int score_to_dec);
     int getAmountZero();
 	int getAmountZeroScore(int score_to_find);
+    int *getNotIncludedScoreArr();
+    void setNumberOfNotIncluded(int numberOfNotIncluded);
     ~Group();
 };
 

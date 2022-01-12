@@ -18,7 +18,7 @@ bool DoubleKey::operator<(const DoubleKey &key2) const {
 }
 
 bool DoubleKey::operator==(const DoubleKey &key2) const {
-    return (this->first_key == key2.first_key && this->second_key < key2.second_key);
+    return (this->first_key == key2.first_key && this->second_key == key2.second_key);
 }
 
 int DoubleKey::getFirst() {

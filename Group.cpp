@@ -8,7 +8,6 @@ void Group::addPlayer(Player *player_to_add) {
 	DoubleKey* new_key = new DoubleKey(player_to_add->getLevel(), player_to_add->getId());
 	players_by_score_array[player_to_add->getScore()]->add_object(player_to_add, new_key);
 	players_by_level_tree->add_object(player_to_add, new_key);
-	not_included_score_arr[player_to_add->getScore()]++;
 }
 
 void Group::removePlayer(int id_to_remove, int level, int score) {
@@ -18,13 +17,15 @@ void Group::removePlayer(int id_to_remove, int level, int score) {
 		delete search_key;
 	}
 	else {
-		Player *player_to_delete = players_by_level_tree->find_object(search_key)->getinfo();
-		players_by_score_array[player_to_delete->getScore()]->delete_object(search_key);
-		players_by_level_tree->delete_object(search_key);
-		delete search_key;
+		AVLtree<Player, DoubleKey>* player_to_delete = players_by_level_tree->find_object(search_key);
+        if (player_to_delete) {
+            Player* player = player_to_delete->getinfo();
+            players_by_score_array[player->getScore()]->delete_object(search_key);
+            players_by_level_tree->delete_object(search_key);
+            delete search_key;
+        }
 	}
 }
-
 
 void Group::increaseCounter(int score_to_add)
 {
@@ -54,14 +55,10 @@ int Group::getAmountZeroScore(int score_to_find){
 Group::Group(int id):group_id(id), number_of_not_included(0),
 						players_by_score_array(new AVLtree<Player,DoubleKey>*[200]),
 							players_by_level_tree(new AVLtree<Player,DoubleKey>) {
-	for (int i = 0; i < 200; ++i) {
+	for (int i = 0; i < 201; ++i) {
 		players_by_score_array[i] = new AVLtree<Player,DoubleKey>();
 		not_included_score_arr[i] = 0;
 	}
-
-
-
-
 }
 
 Group::~Group() {
@@ -71,4 +68,12 @@ Group::~Group() {
 
 AVLtree<Player, DoubleKey> **Group::getPlayersByScoreArray() {
     return this->players_by_score_array;
+}
+
+int *Group::getNotIncludedScoreArr() {
+    return not_included_score_arr;
+}
+
+void Group::setNumberOfNotIncluded(int numberOfNotIncluded) {
+    number_of_not_included = numberOfNotIncluded;
 }

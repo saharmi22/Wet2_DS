@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/tmp.DPh60GQ3wY
+CMAKE_SOURCE_DIR = /tmp/tmp.FDunDIGpiU
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/tmp.DPh60GQ3wY/cmake-build-debug
+CMAKE_BINARY_DIR = /tmp/tmp.FDunDIGpiU/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.DPh60GQ3wY/cmake-build-debug/CMakeFiles /tmp/tmp.DPh60GQ3wY/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.DPh60GQ3wY/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -114,6 +114,102 @@ Wet2_DS/fast:
 	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/build
 .PHONY : Wet2_DS/fast
 
+DoubleKey.o: DoubleKey.cpp.o
+.PHONY : DoubleKey.o
+
+# target to build an object file
+DoubleKey.cpp.o:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o
+.PHONY : DoubleKey.cpp.o
+
+DoubleKey.i: DoubleKey.cpp.i
+.PHONY : DoubleKey.i
+
+# target to preprocess a source file
+DoubleKey.cpp.i:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.i
+.PHONY : DoubleKey.cpp.i
+
+DoubleKey.s: DoubleKey.cpp.s
+.PHONY : DoubleKey.s
+
+# target to generate assembly for a file
+DoubleKey.cpp.s:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.s
+.PHONY : DoubleKey.cpp.s
+
+Group.o: Group.cpp.o
+.PHONY : Group.o
+
+# target to build an object file
+Group.cpp.o:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.o
+.PHONY : Group.cpp.o
+
+Group.i: Group.cpp.i
+.PHONY : Group.i
+
+# target to preprocess a source file
+Group.cpp.i:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.i
+.PHONY : Group.cpp.i
+
+Group.s: Group.cpp.s
+.PHONY : Group.s
+
+# target to generate assembly for a file
+Group.cpp.s:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Group.cpp.s
+.PHONY : Group.cpp.s
+
+Player.o: Player.cpp.o
+.PHONY : Player.o
+
+# target to build an object file
+Player.cpp.o:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.o
+.PHONY : Player.cpp.o
+
+Player.i: Player.cpp.i
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/Player.cpp.s
+.PHONY : Player.cpp.s
+
+PlayersManager.o: PlayersManager.cpp.o
+.PHONY : PlayersManager.o
+
+# target to build an object file
+PlayersManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o
+.PHONY : PlayersManager.cpp.o
+
+PlayersManager.i: PlayersManager.cpp.i
+.PHONY : PlayersManager.i
+
+# target to preprocess a source file
+PlayersManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.i
+.PHONY : PlayersManager.cpp.i
+
+PlayersManager.s: PlayersManager.cpp.s
+.PHONY : PlayersManager.s
+
+# target to generate assembly for a file
+PlayersManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.s
+.PHONY : PlayersManager.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -147,6 +243,18 @@ help:
 	@echo "... Wet2_DS"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... DoubleKey.o"
+	@echo "... DoubleKey.i"
+	@echo "... DoubleKey.s"
+	@echo "... Group.o"
+	@echo "... Group.i"
+	@echo "... Group.s"
+	@echo "... Player.o"
+	@echo "... Player.i"
+	@echo "... Player.s"
+	@echo "... PlayersManager.o"
+	@echo "... PlayersManager.i"
+	@echo "... PlayersManager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

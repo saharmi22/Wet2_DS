@@ -12,7 +12,7 @@ class UnionNode {
 	T* value;
 	UnionNode<T>* parent;
 public:
-	UnionNode():size(1),id(0), value(new T(id)), parent(nullptr) {}
+	UnionNode(int id_new):size(1),id(id_new), value(new T(id_new)), parent(nullptr) {}
 
 	~UnionNode(){
 		delete value;

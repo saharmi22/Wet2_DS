@@ -25,7 +25,6 @@ class PlayersManager {
     int scale;
 
 public:
-
     PlayersManager(int k, int scale);                               //RL
     StatusType MergeGroups(int GroupID1, int GroupID2);                  //sahar
     StatusType AddPlayer(int PlayerID, int GroupID, int score);         //RL

@@ -13,7 +13,7 @@ class UnionFind {
 public:
 	explicit UnionFind(int size):size(size), union_arr(new UnionNode<T>*[size]) {
 		for (int i = 0; i < size; ++i) {
-			union_arr[i] = new UnionNode<T>();
+			union_arr[i] = new UnionNode<T>(i);
 			union_arr[i]->set_id(i);
 		}
 	}

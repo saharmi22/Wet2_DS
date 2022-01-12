@@ -22,7 +22,7 @@ PlayersManager::PlayersManager(int k, int scale){
 //valid parameters
 //merge groups in union
 //merge trees of players
-StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
+StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)      // update not_included_score_arr
 {
     if (GroupID1<=0 || GroupID1> this->num_of_groups || GroupID2<=0 || GroupID2> this->num_of_groups)
         return INVALID_INPUT;
@@ -31,7 +31,7 @@ StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
 	group1 = this->groups->get_union(GroupID1);
 	group2 = this->groups->get_union(GroupID2);
     this->groups->to_union(GroupID1, GroupID2);
-    *group1->getPlayers() + *group2->getPlayers();
+    *group2->getPlayers() + *group1->getPlayers();        //check size
     for (int i=0; i< this->scale; i++)
     {
         *group1->getPlayersByScoreArray()[i] + *group2->getPlayersByScoreArray()[i];    //delete
@@ -57,7 +57,7 @@ StatusType PlayersManager::AddPlayer(int PlayerID, int GroupID, int score){     
 //remove players from group's dss
 //check if is in by score and by level and if not decrease num of not included
 //remove player from system's dss
-StatusType PlayersManager::RemovePlayer(int PlayerID)
+StatusType PlayersManager::RemovePlayer(int PlayerID)        // update not_included_score_arr
 {
     if (PlayerID <= 0)
         return INVALID_INPUT;
@@ -65,7 +65,7 @@ StatusType PlayersManager::RemovePlayer(int PlayerID)
     if (player) {
         Group* group = this->groups->get_union(player->getGroupId());
         DoubleKey players_double_by_level(player->getLevel(), player->getId());
-        group->removePlayer(PlayerID, player->getLevel());
+        group->removePlayer(PlayerID, player->getLevel(), player->getScore());
         if (this->players_by_level->find_object(&players_double_by_level)) {
             this->players_by_score[player->getScore() - 1]->delete_object(&players_double_by_level);
             this->players_by_level->delete_object(&players_double_by_level);
@@ -102,7 +102,7 @@ StatusType PlayersManager::IncreasePlayerIDLevel(int PlayerID, int LevelIncrease
 		DoubleKey* to_delete = players_by_level->find_object(temp)->get_key();
 		players_by_level->delete_object(temp);
 		players_by_score[GroupId]->delete_object(temp);
-		groups->get_union(GroupId)->removePlayer(PlayerID, player_to_increase->getLevel());
+		groups->get_union(GroupId)->removePlayer(PlayerID, player_to_increase->getLevel(), player_to_increase->getScore());
 		temp->setFirst(player_to_increase->getLevel()+LevelIncrease);
 		delete to_delete;
 		players_by_level->add_object(player_to_increase, temp);

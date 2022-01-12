@@ -18,10 +18,9 @@ class Group {
 public:
     Group(int id);
     void addPlayer(Player* player_to_add);
-    void removePlayer(int id_to_remove, int level );
+    void removePlayer(int id_to_remove, int level, int score) ;
     AVLtree<Player, DoubleKey>* getPlayers();
     AVLtree<Player, DoubleKey>** getPlayersByScoreArray();
-    double getPercent(int score, int lower_level, int higher_level);
     void increaseCounter(int score_to_add);
     void decreaseCounter(int score_to_dec);
     int getAmountZero();

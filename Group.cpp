@@ -8,14 +8,21 @@ void Group::addPlayer(Player *player_to_add) {
 	DoubleKey* new_key = new DoubleKey(player_to_add->getLevel(), player_to_add->getId());
 	players_by_score_array[player_to_add->getScore()]->add_object(player_to_add, new_key);
 	players_by_level_tree->add_object(player_to_add, new_key);
+	not_included_score_arr[player_to_add->getScore()]++;
 }
 
-void Group::removePlayer(int id_to_remove, int level) {
+void Group::removePlayer(int id_to_remove, int level, int score) {
 	DoubleKey* search_key = new DoubleKey(level, id_to_remove);
-	Player* player_to_delete = players_by_level_tree->find_object(search_key)->getinfo();
-	players_by_score_array[player_to_delete->getScore()]->delete_object(search_key);
-	players_by_level_tree->delete_object(search_key);
-	delete search_key;
+	if(level==0){
+		not_included_score_arr[score]--;
+		delete search_key;
+	}
+	else {
+		Player *player_to_delete = players_by_level_tree->find_object(search_key)->getinfo();
+		players_by_score_array[player_to_delete->getScore()]->delete_object(search_key);
+		players_by_level_tree->delete_object(search_key);
+		delete search_key;
+	}
 }
 
 

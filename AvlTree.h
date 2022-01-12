@@ -307,7 +307,7 @@ public:
 
 	int getsize()   //return the size of the tree
 	{
-		if(!(this->getinfo()))
+		if(!this||!(this->getinfo()))
 		{
 			return 0;
 		}
@@ -452,7 +452,7 @@ public:
 	}    //done and freed
 
 	int find_level(int low, int sum = 0){
-		 if(!this)
+		 if(!this||!this->get_key())
 		 	return sum;
 		 if(this->get_key()->getFirst()>=low)
 		 	return this->get_left()->find_level(low, 1 + sum + (this->get_right()->getsize()));

@@ -9,6 +9,10 @@ PlayersManager::PlayersManager(int k, int scale){
 	players_by_id = new HashTable<Player>();
 	players_by_level = new AVLtree<Player, DoubleKey>();
 	players_by_score = new AVLtree<Player, DoubleKey>*[200];
+	for (int i = 0; i < 200; ++i) {
+		players_by_score[i] = new AVLtree<Player, DoubleKey>();
+		not_included_score_arr[i] = 0;
+	}
 	groups = new UnionFind<Group>(k);
 	num_of_groups = k;
 	number_of_not_included = 0;
@@ -42,8 +46,9 @@ StatusType PlayersManager::AddPlayer(int PlayerID, int GroupID, int score){     
 		return FAILURE;
 	Player* new_player = new Player(PlayerID, score, GroupID);
 	players_by_id->Insert(PlayerID, new_player);
-	(groups->get_union(GroupID))->increaseCounter();
+	(groups->get_union(GroupID))->increaseCounter(score);
 	number_of_not_included++;
+	not_included_score_arr[score]++;
 	return SUCCESS;
 }
 
@@ -60,7 +65,7 @@ StatusType PlayersManager::RemovePlayer(int PlayerID)
     if (player) {
         Group* group = this->groups->get_union(player->getGroupId());
         DoubleKey players_double_by_level(player->getLevel(), player->getId());
-        group->removePlayer(PlayerID);
+        group->removePlayer(PlayerID, player->getLevel());
         if (this->players_by_level->find_object(&players_double_by_level)) {
             this->players_by_score[player->getScore() - 1]->delete_object(&players_double_by_level);
             this->players_by_level->delete_object(&players_double_by_level);
@@ -84,10 +89,9 @@ StatusType PlayersManager::IncreasePlayerIDLevel(int PlayerID, int LevelIncrease
 	if(player_to_increase->getLevel()==0){
 		player_to_increase->addToLevel(LevelIncrease);
 		int new_level = player_to_increase->getLevel();
-
+		 not_included_score_arr[player_to_increase->getScore()]--;
 		number_of_not_included--;
-		(groups->get_union(GroupId))->decreaseCounter();
-
+		(groups->get_union(GroupId))->decreaseCounter(player_to_increase->getScore());
 		DoubleKey* new_key = new DoubleKey(PlayerID, new_level);
 		players_by_level->add_object(player_to_increase, new_key);
 		players_by_score[GroupId]->add_object(player_to_increase, new_key);
@@ -98,7 +102,7 @@ StatusType PlayersManager::IncreasePlayerIDLevel(int PlayerID, int LevelIncrease
 		DoubleKey* to_delete = players_by_level->find_object(temp)->get_key();
 		players_by_level->delete_object(temp);
 		players_by_score[GroupId]->delete_object(temp);
-		groups->get_union(GroupId)->removePlayer(PlayerID);
+		groups->get_union(GroupId)->removePlayer(PlayerID, player_to_increase->getLevel());
 		temp->setFirst(player_to_increase->getLevel()+LevelIncrease);
 		delete to_delete;
 		players_by_level->add_object(player_to_increase, temp);
@@ -144,24 +148,33 @@ StatusType PlayersManager::GetPercentOfPlayersWithScoreInBounds(int GroupID, int
 		return INVALID_INPUT;
 	if(GroupID==0){
 		double amount_level = players_by_level->find_level(lowerLevel) - players_by_level->find_level(higherLevel);
-		double amount_score = players_by_score[score]->find_level(lowerLevel) - players_by_score[score]->find_level(higherLevel);
-		double percentage = amount_score/amount_level;
-		*players = percentage;                  //add zero levels
-
-		//add arr to manager
-		//
-	}
-	else{
-		AVLtree<Player,DoubleKey>** players_by_score_array = groups->get_union(GroupID)->getPlayersByScoreArray();
-		AVLtree<Player, DoubleKey>* players_by_level_tree= groups->get_union(GroupID)->getPlayers();
-
-		double amount_level = players_by_level_tree->find_level(lowerLevel) - players_by_level_tree->find_level(higherLevel);
-		double amount_score = players_by_score_array[score]->find_level(lowerLevel) - players_by_score_array[score]->find_level(higherLevel);
+		double amount_score = players_by_score[score]->find_level(lowerLevel) - players_by_score[score]->find_level(higherLevel+1);
+		if(lowerLevel==0){
+			amount_level += number_of_not_included;
+			amount_score += not_included_score_arr[score];
+		}
+		if(amount_level==0){
+			return FAILURE;
+		}
 		double percentage = amount_score/amount_level;
 		*players = percentage;
-
-
-
+	}
+	else{
+		Group* group_to_pre = groups->get_union(GroupID);
+		AVLtree<Player,DoubleKey>** players_by_score_array = group_to_pre->getPlayersByScoreArray();
+		AVLtree<Player, DoubleKey>* players_by_level_tree= group_to_pre->getPlayers();
+		double amount_level = players_by_level_tree->find_level(lowerLevel) - players_by_level_tree->find_level(higherLevel);
+		double amount_score = players_by_score_array[score]->find_level(lowerLevel) - players_by_score_array[score]->find_level(higherLevel);
+		if(lowerLevel==0)
+		{
+			amount_level += group_to_pre->getAmountZero();
+			amount_score += group_to_pre->getAmountZeroScore(score);
+		}
+		if(amount_level==0){
+			return FAILURE;
+		}
+		double percentage = amount_score/amount_level;
+		*players = percentage;
 	}
 	 return SUCCESS;
 

@@ -13,18 +13,19 @@ class Group {
     int number_of_not_included;
     AVLtree<Player,DoubleKey>** players_by_score_array;
     AVLtree<Player, DoubleKey>* players_by_level_tree;
+	int not_included_score_arr[200];
 
 public:
     Group(int id);
     void addPlayer(Player* player_to_add);
-    void removePlayer(int id_to_remove);
-    Player* changePlayersScore(DoubleKey key, int amount_to_increase);
-    Player* changePlayersLevel(DoubleKey key, int amount_to_increase);
+    void removePlayer(int id_to_remove, int level );
     AVLtree<Player, DoubleKey>* getPlayers();
     AVLtree<Player, DoubleKey>** getPlayersByScoreArray();
     double getPercent(int score, int lower_level, int higher_level);
-    void increaseCounter();
-    void decreaseCounter();
+    void increaseCounter(int score_to_add);
+    void decreaseCounter(int score_to_dec);
+    int getAmountZero();
+	int getAmountZeroScore(int score_to_find);
     ~Group();
 };
 

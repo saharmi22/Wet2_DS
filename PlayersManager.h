@@ -18,8 +18,9 @@ class PlayersManager {
     HashTable<Player>* players_by_id;
     AVLtree<Player, DoubleKey>* players_by_level;
     AVLtree<Player, DoubleKey>** players_by_score;
-    int number_of_not_included;
-    UnionFind<Group>* groups;
+	UnionFind<Group>* groups;
+	int not_included_score_arr[200];
+	int number_of_not_included;
     int num_of_groups;
     int scale;
 

@@ -170,8 +170,8 @@ public:
             }
             else
                 return this->get_right()->get_extra() +
-                        (this->get_extra() - this->get_left()->get_extra())
-                    + this->get_left()->getMSum(m - this->get_right()->getsize());
+                        (this->get_extra() - this->get_left()->get_extra() - this->get_right()->get_extra())
+                    + this->get_left()->getMSum(m - this->get_right()->getsize() - 1);
         }
         else {
             if (this->getsize() == m)

@@ -11,15 +11,15 @@ class UnionFind {
 	int size;
 	UnionNode<T>** union_arr;
 public:
-	explicit UnionFind(int size):size(size), union_arr(new UnionNode<T>*[size]) {
-		for (int i = 0; i < size; ++i) {
+	explicit UnionFind(int size):size(size), union_arr(new UnionNode<T>*[size+1]) {
+		for (int i = 0; i < size+1; ++i) {
 			union_arr[i] = new UnionNode<T>(i);
 			union_arr[i]->set_id(i);
 		}
 	}
 	~UnionFind()
 	{
-		for (int i = 0; i < size; ++i) {
+		for (int i = 0; i < size+1; ++i) {
 			delete union_arr[i];
 		}
 		delete[] union_arr;

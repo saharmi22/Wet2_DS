@@ -6,23 +6,61 @@
 
 #IncludeRegexTransform: 
 
-/tmp/tmp.HNLZ2ldeVz/HashTable.cpp
+/tmp/tmp.FDunDIGpiU/AvlTree.h
+DoubleKey.h
+/tmp/tmp.FDunDIGpiU/DoubleKey.h
+
+/tmp/tmp.FDunDIGpiU/DoubleKey.h
+
+/tmp/tmp.FDunDIGpiU/Group.h
+AvlTree.h
+/tmp/tmp.FDunDIGpiU/AvlTree.h
+Player.h
+/tmp/tmp.FDunDIGpiU/Player.h
+DoubleKey.h
+/tmp/tmp.FDunDIGpiU/DoubleKey.h
+
+/tmp/tmp.FDunDIGpiU/HashTable.h
+HashTableNode.h
+/tmp/tmp.FDunDIGpiU/HashTableNode.h
+
+/tmp/tmp.FDunDIGpiU/HashTableNode.h
+
+/tmp/tmp.FDunDIGpiU/Player.h
+
+/tmp/tmp.FDunDIGpiU/PlayersManager.h
 HashTable.h
-/tmp/tmp.HNLZ2ldeVz/HashTable.h
+/tmp/tmp.FDunDIGpiU/HashTable.h
+Player.h
+/tmp/tmp.FDunDIGpiU/Player.h
+AvlTree.h
+/tmp/tmp.FDunDIGpiU/AvlTree.h
+DoubleKey.h
+/tmp/tmp.FDunDIGpiU/DoubleKey.h
+UnionFind.h
+/tmp/tmp.FDunDIGpiU/UnionFind.h
+library2.h
+/tmp/tmp.FDunDIGpiU/library2.h
+Group.h
+/tmp/tmp.FDunDIGpiU/Group.h
 
-/tmp/tmp.HNLZ2ldeVz/HashTable.h
-HashTableNode.h
-/tmp/tmp.HNLZ2ldeVz/HashTableNode.h
+/tmp/tmp.FDunDIGpiU/UnionFind.h
+UnionNode.h
+/tmp/tmp.FDunDIGpiU/UnionNode.h
 
-/tmp/tmp.HNLZ2ldeVz/HashTableNode.cpp
-HashTableNode.h
-/tmp/tmp.HNLZ2ldeVz/HashTableNode.h
+/tmp/tmp.FDunDIGpiU/UnionNode.h
 
-/tmp/tmp.HNLZ2ldeVz/HashTableNode.h
+/tmp/tmp.FDunDIGpiU/library2.h
 
-/tmp/tmp.HNLZ2ldeVz/main.cpp
+/tmp/tmp.FDunDIGpiU/main.cpp
 iostream
 -
 HashTable.h
-/tmp/tmp.HNLZ2ldeVz/HashTable.h
+/tmp/tmp.FDunDIGpiU/HashTable.h
+Group.h
+/tmp/tmp.FDunDIGpiU/Group.h
+PlayersManager.h
+/tmp/tmp.FDunDIGpiU/PlayersManager.h
+DoubleKey.h
+/tmp/tmp.FDunDIGpiU/DoubleKey.h
 

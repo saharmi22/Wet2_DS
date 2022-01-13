@@ -65,8 +65,9 @@ public:
         if (!this->Member(key)) {
             if (this->num_of_items >= this->table_size)
                 rehash();
-            while (this->table[index] && this->table[index]->GetKey() == -1) {
+            while (this->table[index] && this->table[index]->GetKey() != -1) {
                 index = h(h0 + count*r0);
+                count++;
             }
             HashTableNode<T> *new_node = new HashTableNode<T>(key, data);
             this->table[index] = new_node;

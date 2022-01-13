@@ -31,20 +31,20 @@ StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
 	group1 = this->groups->get_union(GroupID1);
 	group2 = this->groups->get_union(GroupID2);
     this->groups->to_union(GroupID1, GroupID2);
-    if (group1->getPlayers()->getsize() < group2->getPlayers()->getsize()) {
-        *group2->getPlayers() + *group1->getPlayers();
-        for (int i = 0; i < this->scale; i++) {
-            *group2->getPlayersByScoreArray()[i] + *group1->getPlayersByScoreArray()[i];    //delete
-            group2->getNotIncludedScoreArr()[i] += group1->getNotIncludedScoreArr()[i];
-            group1->getNotIncludedScoreArr()[i] = group2->getNotIncludedScoreArr()[i];
-        }
-    }
-    else {
+    if (group2->getPlayers()->getsize() < group1->getPlayers()->getsize()) {
         *group1->getPlayers() + *group2->getPlayers();
         for (int i = 0; i < this->scale; i++) {
             *group1->getPlayersByScoreArray()[i] + *group2->getPlayersByScoreArray()[i];    //delete
             group1->getNotIncludedScoreArr()[i] += group2->getNotIncludedScoreArr()[i];
             group2->getNotIncludedScoreArr()[i] = group1->getNotIncludedScoreArr()[i];
+        }
+    }
+    else {
+        *group2->getPlayers() + *group1->getPlayers();
+        for (int i = 0; i < this->scale; i++) {
+            *group2->getPlayersByScoreArray()[i] + *group1->getPlayersByScoreArray()[i];    //delete
+            group2->getNotIncludedScoreArr()[i] += group1->getNotIncludedScoreArr()[i];
+            group1->getNotIncludedScoreArr()[i] = group2->getNotIncludedScoreArr()[i];
         }
     }
     group1->setNumberOfNotIncluded(group1->getAmountZero() + group2->getAmountZero());
@@ -77,15 +77,18 @@ StatusType PlayersManager::RemovePlayer(int PlayerID)        // update not_inclu
     Player* player = this->players_by_id->GetMember(PlayerID);
     if (player) {
         Group* group = this->groups->get_union(player->getGroupId());
-        DoubleKey players_double_by_level(player->getLevel(), player->getId());
+        DoubleKey* players_double_by_level = new DoubleKey(player->getLevel(), player->getId());
         group->removePlayer(PlayerID, player->getLevel(), player->getScore());
-        if (this->players_by_level->find_object(&players_double_by_level)) {
-            this->players_by_score[player->getScore()]->delete_object(&players_double_by_level);
-            this->players_by_level->delete_object(&players_double_by_level);
+        if (this->players_by_level->find_object(players_double_by_level)) {
+            this->players_by_score[player->getScore()]->delete_object(players_double_by_level);
+            this->players_by_level->delete_object(players_double_by_level);
         }
-        else
+        else {
             this->number_of_not_included--;
+            this->not_included_score_arr[player->getScore()]--;
+        }
         this->players_by_id->Delete(PlayerID);
+        delete player;
         return SUCCESS;
     }
     return FAILURE;
@@ -98,27 +101,28 @@ StatusType PlayersManager::IncreasePlayerIDLevel(int PlayerID, int LevelIncrease
 	if(!player_to_increase)
 		return FAILURE;
 	int GroupId = player_to_increase->getGroupId();
-	if(player_to_increase->getLevel()==0){
+    DoubleKey* doubleKey = new DoubleKey(player_to_increase->getLevel(), PlayerID);
+	if(!(this->players_by_level->find_object(doubleKey))){
 		player_to_increase->addToLevel(LevelIncrease);
 		int new_level = player_to_increase->getLevel();
         not_included_score_arr[player_to_increase->getScore()]--;
 		number_of_not_included--;
 		(groups->get_union(GroupId))->decreaseCounter(player_to_increase->getScore());
-		DoubleKey* new_key = new DoubleKey(PlayerID, new_level);
+		DoubleKey* new_key = new DoubleKey(new_level, PlayerID);
 		players_by_level->add_object(player_to_increase, new_key);
 		players_by_score[GroupId]->add_object(player_to_increase, new_key);
 		groups->get_union(GroupId)->addPlayer(player_to_increase);   //change group accordingly
+        delete doubleKey;
 	}
 	else{
-		DoubleKey* temp = new DoubleKey(PlayerID, player_to_increase->getLevel());
-		DoubleKey* to_delete = players_by_level->find_object(temp)->get_key();
-		players_by_level->delete_object(temp);
-		players_by_score[GroupId]->delete_object(temp);
+		DoubleKey* to_delete = players_by_level->find_object(doubleKey)->get_key();
+		players_by_level->delete_object(doubleKey);
+		players_by_score[GroupId]->delete_object(doubleKey);
 		groups->get_union(GroupId)->removePlayer(PlayerID, player_to_increase->getLevel(), player_to_increase->getScore());
-		temp->setFirst(player_to_increase->getLevel()+LevelIncrease);
+		doubleKey->setFirst(player_to_increase->getLevel()+LevelIncrease);
 		delete to_delete;
-		players_by_level->add_object(player_to_increase, temp);
-		players_by_score[GroupId]->add_object(player_to_increase, temp);
+		players_by_level->add_object(player_to_increase, doubleKey);
+		players_by_score[GroupId]->add_object(player_to_increase, doubleKey);
 		groups->get_union(GroupId)->addPlayer(player_to_increase);
 	}
 	return SUCCESS;
@@ -139,9 +143,13 @@ StatusType PlayersManager::ChangePlayerIDScore(int PlayerID, int NewScore)
         player->setScore(NewScore);
         DoubleKey* players_double_by_level = new DoubleKey(player->getLevel(), player->getId());
         if (!this->players_by_score[old_score]->find_object(players_double_by_level)) {
+            Group* group = this->groups->get_union(player->getGroupId());
             this->players_by_score[old_score]->add_object(player, players_double_by_level);
             this->players_by_level->add_object(player, players_double_by_level);
             this->number_of_not_included--;
+            this->not_included_score_arr[old_score]--;
+            group->decreaseCounter(old_score);
+            group->addPlayer(player);
         }
         else {
             this->players_by_score[old_score]->delete_object(players_double_by_level);
@@ -196,14 +204,20 @@ StatusType PlayersManager::AverageHighestPlayerLevelByGroup(int GroupID, int m, 
 	if (GroupID > 0) {
 		Group *group = this->groups->get_union(GroupID);
 		AVLtree<Player, DoubleKey> *players = group->getPlayers();
-		if (players->getsize() >= m) {
-			*level = players->getMSum(m) / m;
+		if (players->getsize() + group->getAmountZero() >= m) {
+            if (players->getsize() >= m)
+                *level = players->getMSum(m) / (double)m;
+            else
+                *level = players->getMSum(players->getsize()) / (double)m;
 			return SUCCESS;
 		}
 	}
 	else {
-		if (this->players_by_level->getsize() >= m) {
-			*level = this->players_by_level->getMSum(m) / m;
+		if (this->players_by_level->getsize() + this->number_of_not_included >= m) {
+            if (players_by_level->getsize() >= m)
+                *level = players_by_level->getMSum(m) / (double)m;
+            else
+                *level = players_by_level->getMSum(players_by_level->getsize()) / (double)m ;
 			return SUCCESS;
 		}
 	}

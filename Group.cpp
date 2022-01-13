@@ -13,7 +13,7 @@ void Group::addPlayer(Player *player_to_add) {
 void Group::removePlayer(int id_to_remove, int level, int score) {
 	DoubleKey* search_key = new DoubleKey(level, id_to_remove);
 	if(level==0){
-		not_included_score_arr[score]--;
+		this->decreaseCounter(score);
 		delete search_key;
 	}
 	else {
@@ -75,5 +75,5 @@ int *Group::getNotIncludedScoreArr() {
 }
 
 void Group::setNumberOfNotIncluded(int numberOfNotIncluded) {
-    number_of_not_included = numberOfNotIncluded;
+    this->number_of_not_included = numberOfNotIncluded;
 }

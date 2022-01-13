@@ -13,7 +13,7 @@ void *Init(int k, int scale){
 StatusType MergeGroups(void *DS, int GroupID1, int GroupID2){
     if (!DS)
         return INVALID_INPUT;
-    return ((PlayersManager*)DS)-> MergeGroups(GroupID, GroupID2);
+    return ((PlayersManager*)DS)-> MergeGroups(GroupID1, GroupID2);
 }
 
 StatusType AddPlayer(void *DS, int PlayerID, int GroupID, int score){

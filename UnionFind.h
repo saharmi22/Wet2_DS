@@ -35,6 +35,10 @@ public:
 		return current;
 	}
 
+	int get_union_size(int cell){
+		return get_group(union_arr[cell])->get_size();
+	}
+
 	T* get_union(int cell){
 		UnionNode<T>* cell_union = get_group(union_arr[cell]);
 		UnionNode<T>* temp = union_arr[cell];

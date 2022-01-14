@@ -25,7 +25,7 @@ public:
 	}
 	void increase_size(int amount_to_increase)
 	{
-		size = size + amount_to_increase;
+		size += amount_to_increase;
 	}
 	void decrease_size(int amount_to_decrease)
 	{

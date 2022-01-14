@@ -59,13 +59,14 @@ public:
 	{
 		UnionNode<T>* union_a = get_group(union_arr[a]);
 		UnionNode<T>* union_b = get_group(union_arr[b]);
-		if(union_a->get_size()>union_b->get_size()){
-			union_b->set_parent(union_a);
-			union_a->increase_size(union_b->get_size());
-		}
-		else{
-			union_a->set_parent(union_b);
-			union_b->increase_size(union_a->get_size());
+		if(union_a!=union_b) {
+			if (union_a->get_size() > union_b->get_size()) {
+				union_b->set_parent(union_a);
+				union_a->increase_size(union_b->get_size());
+			} else {
+				union_a->set_parent(union_b);
+				union_b->increase_size(union_a->get_size());
+			}
 		}
 	}
 };

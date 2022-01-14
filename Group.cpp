@@ -10,6 +10,10 @@ void Group::addPlayer(Player *player_to_add) {
 	players_by_level_tree->add_object(player_to_add, new_key);
 }
 
+int Group::getId(){
+	return this->group_id;
+}
+
 //def done
 void Group::removePlayer(int id_to_remove, int level, int score) {
 	DoubleKey* search_key = new DoubleKey(level, id_to_remove);
@@ -20,7 +24,7 @@ void Group::removePlayer(int id_to_remove, int level, int score) {
 	}
 	else {
         Player* player = player_to_delete->getinfo();
-        players_by_score_array[player->getScore()]->delete_object(search_key);
+        players_by_score_array[score]->delete_object(search_key);
         players_by_level_tree->delete_object(search_key);
         delete search_key;
 	}
@@ -33,7 +37,7 @@ void Group::removePlayer_fake(int id_to_remove, int level, int score) {
     AVLtree<Player, DoubleKey>* player_to_delete = players_by_level_tree->find_object(search_key);
     if(player_to_delete){
         Player* player = player_to_delete->getinfo();
-        players_by_score_array[player->getScore()]->delete_object(search_key);
+        players_by_score_array[score]->delete_object(search_key);
         players_by_level_tree->delete_object(search_key);
     }
     delete search_key;

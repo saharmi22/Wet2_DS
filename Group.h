@@ -28,6 +28,7 @@ public:
 	int getAmountZeroScore(int score_to_find);
     int *getNotIncludedScoreArr();
     void setNumberOfNotIncluded(int numberOfNotIncluded);
+    int getId();
     ~Group();
 };
 

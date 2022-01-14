@@ -26,18 +26,19 @@ StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
     if (GroupID1<=0 || GroupID1> this->num_of_groups || GroupID2<=0 || GroupID2> this->num_of_groups) {
         return INVALID_INPUT;
     }
-    if(GroupID1!=GroupID2) {
-		Group *group1;
-		Group *group2;
-		group1 = this->groups->get_union(GroupID1);
-		group2 = this->groups->get_union(GroupID2);
+
+	Group *group1;
+	Group *group2;
+	group1 = this->groups->get_union(GroupID1);
+	group2 = this->groups->get_union(GroupID2);
+	if((GroupID1!=GroupID2)&&(group1->getId()!=group2->getId())) {
 		int size_1 = this->groups->get_union_size(GroupID1);
 		int size_2 = this->groups->get_union_size(GroupID2);
 		this->groups->to_union(GroupID1, GroupID2);
 		if ( size_2 < size_1 ) {
 			*group1->getPlayers() + *group2->getPlayers();
 			for (int i = 0; i < this->scale; i++) {
-				*(group2->getPlayersByScoreArray()[i]) + *(group1->getPlayersByScoreArray()[i]);    //delete
+				*(group1->getPlayersByScoreArray()[i]) + *(group2->getPlayersByScoreArray()[i]);    //delete
 				group1->getNotIncludedScoreArr()[i] += group2->getNotIncludedScoreArr()[i];
 				group2->getNotIncludedScoreArr()[i] = group1->getNotIncludedScoreArr()[i];
 			}
@@ -149,7 +150,7 @@ StatusType PlayersManager::ChangePlayerIDScore(int PlayerID, int NewScore)
         player->setScore(NewScore);
         DoubleKey* players_double_by_level = new DoubleKey(player->getLevel(), player->getId());
         Group* group = this->groups->get_union(player->getGroupId());
-        if (!this->players_by_level->find_object(players_double_by_level)) {
+        if (!(this->players_by_level->find_object(players_double_by_level))) {
             this->players_by_score[NewScore]->add_object(player, players_double_by_level);
             this->players_by_level->add_object(player, players_double_by_level);
             this->number_of_not_included--;
@@ -160,8 +161,8 @@ StatusType PlayersManager::ChangePlayerIDScore(int PlayerID, int NewScore)
         else {
             this->players_by_score[old_score]->delete_object(players_double_by_level);
             this->players_by_score[NewScore]->add_object(player, players_double_by_level);
-            group->increaseCounter(NewScore);
-            group->decreaseCounter(old_score);
+            group->removePlayer_fake(PlayerID, player->getLevel(), old_score);
+            group->addPlayer(player);
         }
         return SUCCESS;
     }

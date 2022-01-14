@@ -23,13 +23,13 @@
     }
 
     void Player::addToLevel(int increase_level) {
-        Player::level += increase_level;
+        this->level += increase_level;
     }
 
     void Player::setScore(int score_) {
-        Player::score = score_;
+        this->score = score_;
     }
 
     void Player::setGroupId(int groupId) {
-        group_id = groupId;
+        this->group_id = groupId;
     }

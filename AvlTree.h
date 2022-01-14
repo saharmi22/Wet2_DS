@@ -156,7 +156,7 @@ public:
 		delete[] new_keys;
 	}  //freed  //done
 
-    int getMSum(int m)
+   /* int getMSum(int m)
     {
         if (this->get_right()) {
             if (this->get_right()->tree_size >= m) //only right
@@ -178,7 +178,39 @@ public:
                 return this->get_extra();
             //no need for else
         }
-    }
+    }       */
+
+   int getMSum(int m)
+   {
+   	if(this->getsize() == m){
+   		return this->get_extra();
+   	}
+   	else if(this->get_right()){
+   		if(this->get_right()->getsize() + 1 == m){
+   			if(this->get_left()){
+   				return this->get_extra() - this->get_left()->get_extra();
+   			}
+   			else{
+   				return this->get_extra();
+   			}
+   		}
+   		else if(this->get_right()->getsize() < m){
+   			return  this->get_extra() - this->get_left()->get_extra() +this->get_left()->getMSum(m - 1 - this->get_right()->getsize());
+		}
+   		else{
+   			return this->get_right()->getMSum(m);
+   		}
+   	}
+   	else{
+   		if(this->get_left()) {
+			return this->get_extra() - this->get_left()->get_extra() + this->get_left()->getMSum(m - 1);
+		}
+   		else{
+   			return this->get_extra();
+   		}
+   	}
+
+   }
 
 	void empty_tree()
 	{

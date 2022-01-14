@@ -104,27 +104,29 @@ StatusType PlayersManager::IncreasePlayerIDLevel(int PlayerID, int LevelIncrease
 	if(!player_to_increase)
 		return FAILURE;
 	int GroupId = player_to_increase->getGroupId();
-    DoubleKey* doubleKey = new DoubleKey(player_to_increase->getLevel(), PlayerID);
-	if(!(this->players_by_level->find_object(doubleKey))){
+    DoubleKey* doubleKey = new DoubleKey(player_to_increase->getLevel(), PlayerID); //old
+	if(!(this->players_by_level->find_object(doubleKey))) {
 		player_to_increase->addToLevel(LevelIncrease);
 		int new_level = player_to_increase->getLevel();
+        //decreasing not included counters in group and system
         not_included_score_arr[player_to_increase->getScore()]--;
 		number_of_not_included--;
 		(groups->get_union(GroupId))->decreaseCounter(player_to_increase->getScore());
-		DoubleKey* new_key = new DoubleKey(new_level, PlayerID);
-		players_by_level->add_object(player_to_increase, new_key);
-		players_by_score[player_to_increase->getScore()]->add_object(player_to_increase, new_key);
+        //adding to dss in system and in group
+		doubleKey->setFirst(new_level); //new
+		players_by_level->add_object(player_to_increase, doubleKey);
+		players_by_score[player_to_increase->getScore()]->add_object(player_to_increase, doubleKey);
 		groups->get_union(GroupId)->addPlayer(player_to_increase);   //change group accordingly
-        delete doubleKey;
 	}
-	else{
-		DoubleKey* to_delete = players_by_level->find_object(doubleKey)->get_key();
+	else {
+        //deleting from dss by level
 		players_by_level->delete_object(doubleKey);
 		players_by_score[player_to_increase->getScore()]->delete_object(doubleKey);
-		groups->get_union(GroupId)->removePlayer(PlayerID, player_to_increase->getLevel(), player_to_increase->getScore());
-		doubleKey->setFirst(player_to_increase->getLevel()+LevelIncrease);
-		delete to_delete;
-		player_to_increase->addToLevel(LevelIncrease);
+		groups->get_union(GroupId)->removePlayer_fake(PlayerID, player_to_increase->getLevel(), player_to_increase->getScore());
+        //changing level
+        player_to_increase->addToLevel(LevelIncrease);
+		doubleKey->setFirst(player_to_increase->getLevel());
+        //adding to dss by level
 		players_by_level->add_object(player_to_increase, doubleKey);
 		players_by_score[player_to_increase->getScore()]->add_object(player_to_increase, doubleKey);
 		groups->get_union(GroupId)->addPlayer(player_to_increase);
@@ -147,8 +149,7 @@ StatusType PlayersManager::ChangePlayerIDScore(int PlayerID, int NewScore)
         player->setScore(NewScore);
         DoubleKey* players_double_by_level = new DoubleKey(player->getLevel(), player->getId());
         Group* group = this->groups->get_union(player->getGroupId());
-        if (!this->players_by_score[old_score]->find_object(players_double_by_level)) {
-
+        if (!this->players_by_level->find_object(players_double_by_level)) {
             this->players_by_score[NewScore]->add_object(player, players_double_by_level);
             this->players_by_level->add_object(player, players_double_by_level);
             this->number_of_not_included--;

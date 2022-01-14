@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /tmp/tmp.FDunDIGpiU
+CMAKE_SOURCE_DIR = /tmp/tmp.Z0hXwCIqmf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /tmp/tmp.FDunDIGpiU/cmake-build-debug
+CMAKE_BINARY_DIR = /tmp/tmp.Z0hXwCIqmf/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.Z0hXwCIqmf/cmake-build-debug/CMakeFiles /tmp/tmp.Z0hXwCIqmf/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.FDunDIGpiU/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /tmp/tmp.Z0hXwCIqmf/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -210,6 +210,30 @@ PlayersManager.cpp.s:
 	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.s
 .PHONY : PlayersManager.cpp.s
 
+library2.o: library2.cpp.o
+.PHONY : library2.o
+
+# target to build an object file
+library2.cpp.o:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/library2.cpp.o
+.PHONY : library2.cpp.o
+
+library2.i: library2.cpp.i
+.PHONY : library2.i
+
+# target to preprocess a source file
+library2.cpp.i:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/library2.cpp.i
+.PHONY : library2.cpp.i
+
+library2.s: library2.cpp.s
+.PHONY : library2.s
+
+# target to generate assembly for a file
+library2.cpp.s:
+	$(MAKE) -f CMakeFiles/Wet2_DS.dir/build.make CMakeFiles/Wet2_DS.dir/library2.cpp.s
+.PHONY : library2.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -255,6 +279,9 @@ help:
 	@echo "... PlayersManager.o"
 	@echo "... PlayersManager.i"
 	@echo "... PlayersManager.s"
+	@echo "... library2.o"
+	@echo "... library2.i"
+	@echo "... library2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

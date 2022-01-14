@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/Wet2_DS.dir/main.cpp.o"
+  "CMakeFiles/Wet2_DS.dir/library2.cpp.o"
   "CMakeFiles/Wet2_DS.dir/PlayersManager.cpp.o"
   "CMakeFiles/Wet2_DS.dir/Group.cpp.o"
   "CMakeFiles/Wet2_DS.dir/Player.cpp.o"

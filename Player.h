@@ -21,6 +21,7 @@ public:
     void addToLevel(int increase_level);
     void setScore(int score_);
     void setGroupId(int groupId);
+    ~Player() = default;
 };
 
 

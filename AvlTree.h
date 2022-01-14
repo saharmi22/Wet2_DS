@@ -159,27 +159,24 @@ public:
     int getMSum(int m)
     {
         if (this->get_right()) {
-            if (this->get_right()->tree_size + 1 > m)
+            if (this->get_right()->tree_size >= m) //only right
                 return this->get_right()->getMSum(m);
-            else if (this->get_right()->tree_size + 1 == m) {
-                if (this->get_left()) {
+            else if (this->get_right()->tree_size == m - 1) { //root+right
+                if (this->get_left())
                     return this->get_extra() - this->get_left()->get_extra();
-                }
                 else
                     return this->get_extra();
             }
-            else
-                return this->get_right()->get_extra() +
-                        (this->get_extra() - this->get_left()->get_extra() - this->get_right()->get_extra())
-                    + this->get_left()->getMSum(m - this->get_right()->getsize() - 1);
+            else //root + right + part of left
+                return (this->get_extra() - this->get_left()->get_extra())
+                    + this->get_left()->getMSum(m - (this->get_right()->getsize() + 1));
         }
         else {
-            if (this->getsize() == m)
+            if (this->getsize() > m)
+                return (this->get_extra() - this->get_left()->get_extra()) + this->get_left()->getMSum(m-1);
+            else if (this->getsize() == m)
                 return this->get_extra();
-            else { //more than m
-                return (this->get_extra() - this->get_left()->get_extra())
-                    + this->get_left()->getMSum(m-1);
-            }
+            //no need for else
         }
     }
 

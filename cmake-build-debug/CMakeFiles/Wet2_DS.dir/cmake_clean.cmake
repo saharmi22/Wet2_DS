@@ -5,6 +5,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/Wet2_DS.dir/Group.cpp.o"
   "CMakeFiles/Wet2_DS.dir/Player.cpp.o"
   "CMakeFiles/Wet2_DS.dir/DoubleKey.cpp.o"
+  "CMakeFiles/Wet2_DS.dir/chainHashTable.cpp.o"
+  "CMakeFiles/Wet2_DS.dir/LinkedList.cpp.o"
   "Wet2_DS.pdb"
   "Wet2_DS"
 )

@@ -182,6 +182,8 @@ public:
 
    int getMSum(int m)
    {
+	if (m == 0)
+		return 0;
    	if(this->getsize() == m){
    		return this->get_extra();
    	}
@@ -480,12 +482,30 @@ public:
 		}
 	}    //done and freed
 
-	int find_level(int low, int sum = 0){
-		 if(!this||!this->get_key())
-		 	return sum;
-		 if(this->get_key()->getFirst()>=low)
-		 	return this->get_left()->find_level(low, 1 + sum + (this->get_right()->getsize()));
-		 return this->get_right()->find_level(low, sum);
+	int find_level(int low, int sum = 0) {
+		if (!this || !this->get_key())
+			return sum;
+		if (this->get_key()->getFirst() >= low){
+			if (!this->get_right()) {
+				return this->get_left()->find_level(low, 1 + sum);
+			} else {
+				return this->get_left()->find_level(low, 1 + sum +
+														 (this->get_right()->getsize()));
+			}
+		}
+		return this->get_right()->find_level(low, sum);
+	}
+
+	int findNumLevel(int level, int count = 0)
+	{
+	   if (!this)
+		   return count;
+	   else if (this->get_key()->getFirst() == level)
+		   return count + 1 + this->get_left()->findNumLevel(level) + this->get_right()->findNumLevel(level);
+	   else if (this->get_key()->getFirst() > level)
+		   this->get_left()->findNumLevel(level, count);
+	   else
+		   this->get_right()->findNumLevel(level, count);
 	}
 
 	tree_result replace_next_object(AVLtree<Value,Key>* to_delete){

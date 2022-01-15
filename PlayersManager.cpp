@@ -176,8 +176,11 @@ StatusType PlayersManager::GetPercentOfPlayersWithScoreInBounds(int GroupID, int
 		return FAILURE;
 	}
 	if(GroupID==0){
-		double amount_level = players_by_level->find_level(lowerLevel) - players_by_level->find_level(higherLevel+1);
-		double amount_score = players_by_score[score]->find_level(lowerLevel) - players_by_score[score]->find_level(higherLevel+1);
+        //find level does not include objects of the same level!!
+		double amount_level = players_by_level->find_level(lowerLevel) -
+                players_by_level->find_level(higherLevel + 1);
+		double amount_score = players_by_score[score]->find_level(lowerLevel) -
+                players_by_score[score]->find_level(higherLevel + 1);
 		if(lowerLevel==0){
 			amount_level += number_of_not_included;
 			amount_score += not_included_score_arr[score];
@@ -185,8 +188,7 @@ StatusType PlayersManager::GetPercentOfPlayersWithScoreInBounds(int GroupID, int
 		if(amount_level==0){
 			return FAILURE;
 		}
-		double percentage = amount_score/amount_level;
-		*players = percentage*100;
+		*players = (amount_score/amount_level)*100;
 	}
 	else{
 		Group* group_to_pre = groups->get_union(GroupID);
@@ -202,8 +204,7 @@ StatusType PlayersManager::GetPercentOfPlayersWithScoreInBounds(int GroupID, int
 		if(amount_level==0){
 			return FAILURE;
 		}
-		double percentage = amount_score/amount_level;
-		*players = percentage*100;
+		*players = (amount_score/amount_level)*100;
 	}
 	 return SUCCESS;
 }

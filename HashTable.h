@@ -50,23 +50,23 @@ public:
     HashTable() : table_size(7), num_of_items(0) , table(new HashTableNode<T>*[this->table_size]){}
 
     int h(int key) {
-        return (key % this->table_size);
+        return (key % 7);
     }
 
     int r(int key) {
-        return (1+(key%3));
+        return (1+(key%(5)));
     }
 
     void Insert(int key, T *data) {
-        int r0 = r(key);
-        int h0 = h(key);
-        int index = h0;
-        int count = 1;
         if (!this->Member(key)) {
             if (this->num_of_items >= this->table_size)
-                rehash();
+                rehash(); //rehash could change h,r
+            int r0 = r(key);
+            int h0 = h(key);
+            int index = h0;
+            int count = 1;
             while (this->table[index] && this->table[index]->GetKey() != -1) {
-                index = h(h0 + count*r0);
+                index = (h0 + count*r0)% this->table_size;
                 count++;
             }
             HashTableNode<T> *new_node = new HashTableNode<T>(key, data);
@@ -76,15 +76,15 @@ public:
     }
 
     void Delete(int key) {
+        if (this->num_of_items <= this->table_size/4 && this->table_size!=7)
+            rehash(); //rehash could change h,r
         int r0 = r(key);
         int h0 = h(key);
         int index = h0;
         int count = 1;
-        if (this->num_of_items <= this->table_size/4 && this->table_size!=7)
-            rehash();
         while (this->table[index] && this->table[index]->GetKey()!=key && count <= this->table_size)
         {
-            index = h(h0+count * r0);
+            index = (h0+count * r0)% this->table_size;
             count++;
         }
         if (count <= this->table_size && this->table[index])
@@ -102,7 +102,7 @@ public:
         int count = 1;
         while (this->table[index] && this->table[index]->GetKey()!=key && count <= this->table_size)
         {
-            index = h(h0 + count*r0);
+            index = (h0 + count*r0)% this->table_size;
             count++;
         }
         return (count <= this->table_size && this->table[index]);
@@ -116,7 +116,7 @@ public:
         int count = 1;
         while (this->table[index] && this->table[index]->GetKey()!=key && count <= this->table_size)
         {
-            index = h(h0 + count*r0);
+            index = (h0 + count*r0)% this->table_size;
             count++;
         }
         if (count <= this->table_size && this->table[index])

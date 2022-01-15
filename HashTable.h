@@ -47,10 +47,10 @@ class HashTable {
 
 public:
 
-    HashTable() : table_size(7), num_of_items(0) , table(new HashTableNode<T>*[this->table_size]){}
+    HashTable() : table_size(73), num_of_items(0) , table(new HashTableNode<T>*[this->table_size]){}
 
     int h(int key) {
-        return (key % 7);
+        return (key % table_size);
     }
 
     int r(int key) {
@@ -59,8 +59,8 @@ public:
 
     void Insert(int key, T *data) {
         if (!this->Member(key)) {
-            if (this->num_of_items >= this->table_size)
-                rehash(); //rehash could change h,r
+           /* if (this->num_of_items >= this->table_size)
+                rehash(); //rehash could change h,r */
             int r0 = r(key);
             int h0 = h(key);
             int index = h0;
@@ -76,8 +76,8 @@ public:
     }
 
     void Delete(int key) {
-        if (this->num_of_items <= this->table_size/4 && this->table_size!=7)
-            rehash(); //rehash could change h,r
+       /* if (this->num_of_items <= this->table_size/4 && this->table_size!=7)
+            rehash(); //rehash could change h,r   */
         int r0 = r(key);
         int h0 = h(key);
         int index = h0;

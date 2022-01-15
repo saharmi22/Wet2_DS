@@ -28,10 +28,13 @@ public:
     }
 
     T* GetMember(int key){
-        if (this->data->GetKey() == key)
-            return this->data;
-        else
-            return this->next->GetMember(key);
+        if(this) {
+			if (this->data->GetKey() == key)
+				return this->data;
+			else
+				return this->next->GetMember(key);
+		}
+        return nullptr;
     }
 
     void Insert(HashTableNode<T>* last){

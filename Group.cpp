@@ -36,7 +36,6 @@ void Group::removePlayer_fake(int id_to_remove, int level, int score) {
     DoubleKey* search_key = new DoubleKey(level, id_to_remove);
     AVLtree<Player, DoubleKey>* player_to_delete = players_by_level_tree->find_object(search_key);
     if(player_to_delete){
-        Player* player = player_to_delete->getinfo();
         players_by_score_array[score]->delete_object(search_key);
         players_by_level_tree->delete_object(search_key);
     }

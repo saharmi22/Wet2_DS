@@ -37,14 +37,14 @@ StatusType PlayersManager::MergeGroups(int GroupID1, int GroupID2)
 		this->groups->to_union(GroupID1, GroupID2);
 		if ( size_2 < size_1 ) {
 			*group1->getPlayers() + *group2->getPlayers();
-			for (int i = 0; i < this->scale; i++) {
+			for (int i = 0; i <= this->scale; i++) {
 				*(group1->getPlayersByScoreArray()[i]) + *(group2->getPlayersByScoreArray()[i]);    //delete
 				group1->getNotIncludedScoreArr()[i] += group2->getNotIncludedScoreArr()[i];
 				group2->getNotIncludedScoreArr()[i] = group1->getNotIncludedScoreArr()[i];
 			}
 		} else {
 			*group2->getPlayers() + *group1->getPlayers();
-			for (int i = 0; i < this->scale; i++) {
+			for (int i = 0; i <= this->scale; i++) {
 				*(group2->getPlayersByScoreArray()[i]) + *(group1->getPlayersByScoreArray()[i]);    //delete
 				group2->getNotIncludedScoreArr()[i] += group1->getNotIncludedScoreArr()[i];
 				group1->getNotIncludedScoreArr()[i] = group2->getNotIncludedScoreArr()[i];
@@ -141,7 +141,7 @@ StatusType PlayersManager::IncreasePlayerIDLevel(int PlayerID, int LevelIncrease
 //remove and add to the right cell in score array
 StatusType PlayersManager::ChangePlayerIDScore(int PlayerID, int NewScore)
 {
-    if (PlayerID<=0 || NewScore<=0 || NewScore >= this->scale)
+    if (PlayerID<=0 || NewScore<=0 || NewScore > this->scale)
         return INVALID_INPUT;
     Player* player = this->players_by_id->GetMember(PlayerID);
     if (player)

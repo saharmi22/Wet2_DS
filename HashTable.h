@@ -17,7 +17,7 @@ class HashTable {
         for (int i = x+1; true; i++) {
             int j = 2;
             for (; j < i; j++)
-                if (x % j == 0)
+                if (i % j == 0)
                     break;
             if (j == i)
                 return i;

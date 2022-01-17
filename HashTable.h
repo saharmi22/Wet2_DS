@@ -13,13 +13,35 @@ class HashTable {
     int num_of_items;
     HashTableNode<T>** table;
 
+    int findNextPrime(int x){
+        for (int i = x+1; true; i++) {
+            int j = 2;
+            for (; j < i; j++)
+                if (x % j == 0)
+                    break;
+            if (j == i)
+                return i;
+        }
+    }
+
+    int findLastPrime(int x){
+        for (int i = x-1; i>0; i--) {
+            int j = 2;
+            for (; j < i; j++)
+                if (x % j == 0)
+                    break;
+            if (j == i)
+                return i;
+        }
+    }
+
     void rehash() {
         int original_size = this->table_size;
         int r0, h0, index, count;
         if (this->num_of_items >= this->table_size)
-            this->table_size*=2;
+            this->table_size= findNextPrime(this->table_size);
         else
-            this->table_size/=2;
+            this->table_size= findLastPrime(this->table_size);
         HashTableNode<T>** new_table = new HashTableNode<T>*[this->table_size];
         for (int i=0; i< this->table_size; i++)
         {
@@ -47,20 +69,20 @@ class HashTable {
 
 public:
 
-    HashTable() : table_size(73), num_of_items(0) , table(new HashTableNode<T>*[this->table_size]){}
+    HashTable() : table_size(7), num_of_items(0) , table(new HashTableNode<T>*[this->table_size]){}
 
     int h(int key) {
         return (key % table_size);
     }
 
     int r(int key) {
-        return (1+(key%(5)));
+        return (1+(key%(table_size-3)));
     }
 
     void Insert(int key, T *data) {
         if (!this->Member(key)) {
-           /* if (this->num_of_items >= this->table_size)
-                rehash(); //rehash could change h,r */
+           if (this->num_of_items >= this->table_size)
+                rehash(); //rehash could change h,r
             int r0 = r(key);
             int h0 = h(key);
             int index = h0;
@@ -76,8 +98,8 @@ public:
     }
 
     void Delete(int key) {
-       /* if (this->num_of_items <= this->table_size/4 && this->table_size!=7)
-            rehash(); //rehash could change h,r   */
+       if (2*this->num_of_items <= findLastPrime(this->table_size) && this->table_size!=7)
+            rehash(); //rehash could change h,r
         int r0 = r(key);
         int h0 = h(key);
         int index = h0;

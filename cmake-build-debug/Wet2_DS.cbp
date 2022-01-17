@@ -8,18 +8,18 @@
       <Option virtualFolders="CMake Files\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/tmp/tmp.BR4KbuGGrP/cmake-build-debug" />
+         <Option working_dir="/tmp/tmp.KpmXiEwxp9/cmake-build-debug" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="Wet2_DS">
-         <Option output="/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/tmp/tmp.BR4KbuGGrP/cmake-build-debug" />
+         <Option output="/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/tmp/tmp.KpmXiEwxp9/cmake-build-debug" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -32,15 +32,15 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="Wet2_DS/fast">
-         <Option output="/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/tmp/tmp.BR4KbuGGrP/cmake-build-debug" />
+         <Option output="/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Wet2_DS" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/tmp/tmp.KpmXiEwxp9/cmake-build-debug" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -53,62 +53,62 @@
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS/fast" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 Wet2_DS/fast" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rebuild_cache">
-         <Option working_dir="/tmp/tmp.BR4KbuGGrP/cmake-build-debug" />
+         <Option working_dir="/tmp/tmp.KpmXiEwxp9/cmake-build-debug" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.BR4KbuGGrP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/gmake -f &quot;/tmp/tmp.KpmXiEwxp9/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/DoubleKey.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/DoubleKey.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/Group.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/Group.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/LinkedList.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/LinkedList.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/Player.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/Player.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/PlayersManager.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/PlayersManager.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/chainHashTable.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/chainHashTable.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/library2.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/library2.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/main.cpp">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/main.cpp">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/DoubleKey.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/DoubleKey.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/Group.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/Group.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/HashTable.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/HashTable.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/HashTableNode.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/HashTableNode.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/LinkedList.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/LinkedList.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/Player.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/Player.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/PlayersManager.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/PlayersManager.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/UnionFind.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/UnionFind.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/UnionNode.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/UnionNode.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/chainHashTable.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/chainHashTable.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/library2.h">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/library2.h">
       </Unit>
-      <Unit filename="/tmp/tmp.BR4KbuGGrP/CMakeLists.txt">
+      <Unit filename="/tmp/tmp.KpmXiEwxp9/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>
    </Project>

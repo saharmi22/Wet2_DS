@@ -5,8 +5,104 @@
 #ifndef HASHTABLE_HASHTABLE_H
 #define HASHTABLE_HASHTABLE_H
 
+#include "AvlTree.h"
+#include "DoubleKey.h"
 #include "HashTableNode.h"
+#include "Player.h"
 
+
+class HashTable {
+	int table_size;
+	int num_of_items;
+	AVLtree<Player, DoubleKey> **table;
+public:
+	HashTable():table_size(10), num_of_items(0), table(new AVLtree<Player,DoubleKey>*[10]){
+		for (int i = 0; i < 10; ++i) {
+			table[i] = new AVLtree<Player, DoubleKey>();
+		}
+	}
+	void rehash() {
+		int original_size = this->table_size;
+		AVLtree<Player, DoubleKey> **new_table;
+		new_table = new AVLtree<Player,DoubleKey>*[table_size*3]
+		this->table_size = table_size * 3;
+		for (int i = 0; i < original_size; ++i) {
+			while(this->table[i]->getinfo()){
+				int id = this->table[i]->getinfo()->getId();
+				DoubleKey* new_key = new DoubleKey(id, id);
+				new_table[id%this->table_size]->add_object(this->table[i]->getinfo());
+				this->table[i]->delete_object(new_key);
+			}
+		}
+		AVLtree<Player, DoubleKey> **table_to_delete = this->table;
+		this->table = new_table;
+		delete table_to_delete;
+	}
+
+	void Insert(int key, Player *data) {
+		if (!this->Member(key)) {
+			if((this->table_size*3)<this->num_of_items){
+				this->rehash();
+			}
+			DoubleKey* new_key = new DoubleKey(key, key);
+			table[(key%table_size)]->add_object(data, new_key);
+		}
+	}
+
+	void Delete(int key) {
+		DoubleKey* search_key = new DoubleKey(key, key);
+		if(!this->table[key%(this->table_size)]->find_object(search_key)){
+			this->table[key%(this->table_size)]->delete_object(search_key);
+			this->num_of_items--;
+		}
+		delete search_key;
+	}
+
+	bool Member(int key) {
+		DoubleKey* search_key = new DoubleKey(key, key);
+		if(this->table[key%(this->table_size)]->find_object(search_key)){
+			return true;
+		}
+		delete search_key;
+		return true;
+	}
+
+	T* GetMember(int key)
+	{
+		DoubleKey* search_key = new DoubleKey(key, key);
+		AVLtree<Player,DoubleKey> search_result = this->table[key%(this->table_size)]->find_object(search_key);
+		delete search_key;
+		if(search_result){
+			return search_result.getinfo();
+		}
+		return search_result;
+	}
+
+	~HashTable()
+	{
+		for (int i = 0; i< this->table_size; i++)
+			delete table[i];
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /*
 template <typename T>
 class HashTable {
     int table_size;
@@ -151,6 +247,6 @@ public:
         for (int i = 0; i< this->table_size; i++)
             delete table[i];
     }
-};
+};      */
 
 #endif //HASHTABLE_HASHTABLE_H

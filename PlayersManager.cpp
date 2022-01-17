@@ -5,7 +5,7 @@
 #include "PlayersManager.h"
 
 PlayersManager::PlayersManager(int k, int scale){
-	players_by_id = new HashTable<Player>();
+	players_by_id = new HashTable();
 	players_by_level = new AVLtree<Player, DoubleKey>();
 	players_by_score = new AVLtree<Player, DoubleKey>*[201];
 	for (int i = 0; i < 201; ++i) {

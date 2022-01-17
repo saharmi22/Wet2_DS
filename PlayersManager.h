@@ -15,7 +15,7 @@
 
 class PlayersManager {
 
-    HashTable<Player>* players_by_id;
+    HashTable* players_by_id;
     AVLtree<Player, DoubleKey>* players_by_level;
     AVLtree<Player, DoubleKey>** players_by_score;
 	UnionFind<Group>* groups;
